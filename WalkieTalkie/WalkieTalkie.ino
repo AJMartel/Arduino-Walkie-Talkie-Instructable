@@ -62,12 +62,34 @@ Input/Microphone: Analog pin A0 on all boards
 #include <RF24Audio.h>
 #include "printf.h"    // General includes for radio and audio lib
 
+
+#include <RF24_config.h>
+#include <nRF24L01.h>
+
+
 RF24 radio(7,8);    // Set radio up using pins 7 (CE) 8 (CS)
 RF24Audio rfAudio(radio,0); // Set up the audio using the radio, and set to radio number 0
 
-int talkButton = 3;
+const uint8_t talkButton = 3;
+const uint8_t callButton = 2;
 
-void setup() {      
+
+
+
+int messageLength = 12;
+int msg[1];
+RF24 radio(7,8);
+const uint64_t pipe = 0xE8E8F0F0E1LL;
+int lastmsg = 1;
+String theMessage = "";
+char theChar = 0;
+
+
+
+
+
+void setup()
+{      
   Serial.begin(115200);
   
   printf_begin();
@@ -78,7 +100,8 @@ void setup() {
   pinMode(talkButton, INPUT);
 
   //sets interrupt to check for button talk abutton press
-  attachInterrupt(digitalPinToInterrupt(talkButton), talk, CHANGE);
+  attachInterrupt(digitalPinToInterrupt(talkButton), talk, RISING);
+  attachInterrupt(digitalPinToInterrupt(callButton), call, RISING);
   
   //sets the default state for each module to recevie
   rfAudio.receive();
@@ -91,6 +114,14 @@ void setup() {
 //audio. If button is release, enters receive mode to listen.
 void talk()
 {
+  if (digitalRead(talkButton)) rfAudio.transmit();
+  else rfAudio.receive();
+}
+
+
+void call()
+{
+  
   if (digitalRead(talkButton)) rfAudio.transmit();
   else rfAudio.receive();
 }
