@@ -71,26 +71,27 @@ RF24 radio(7,8);    // Set radio up using pins 7 (CE) 8 (CS)
 RF24Audio rfAudio(radio,0); // Set up the audio using the radio, and set to radio number 0
 
 const uint8_t talkButton = 3;
-const uint8_t callButton = 2;
 
 
 
 
 int messageLength = 12;
 int msg[1];
-RF24 radio(7,8);
 const uint64_t pipe = 0xE8E8F0F0E1LL;
 int lastmsg = 1;
-String theMessage = "";
+//String theMessage = "";
 char theChar = 0;
 
 
 
-
+const uint8_t call = 5;
 
 void setup()
 {      
   Serial.begin(115200);
+
+  pinMode(call, INPUT);
+  //digitalWrite(LED, LOW);
   
   printf_begin();
   radio.begin();
@@ -101,7 +102,6 @@ void setup()
 
   //sets interrupt to check for button talk abutton press
   attachInterrupt(digitalPinToInterrupt(talkButton), talk, RISING);
-  attachInterrupt(digitalPinToInterrupt(callButton), call, RISING);
   
   //sets the default state for each module to recevie
   rfAudio.receive();
@@ -119,14 +119,66 @@ void talk()
 }
 
 
-void call()
-{
-  
-  if (digitalRead(talkButton)) rfAudio.transmit();
-  else rfAudio.receive();
-}
+//void call()
+//{
+//  
+//  if (digitalRead(talkButton)) rfAudio.transmit();
+//  else rfAudio.receive();
+//}
 
 
 void loop()
 {
+  Serial.println(digitalRead(call));
+  if(digitalRead(call))
+  {
+    
+    String theMessage = "*A";
+    int messageSize = theMessage.length();
+  
+    for (int i = 0; i < messageSize; i++)
+    {
+      int charToSend[1];
+      charToSend[0] = theMessage.charAt(i);
+        radio.begin();
+  radio.openWritingPipe(pipe);
+      
+      radio.write(charToSend, 1);
+      Serial.println("hello");
+      Serial.println(theMessage);
+    }
+  
+    //send the 'terminate string' value
+    msg[0] = '&';
+    radio.write(msg,1);
+    Serial.println(theMessage);
+  
+    delay(5);
+  }
+  delay(10);
+//
+//  if(radio.available())
+//  {
+//    //Serial.println("got the call");
+//    
+//    radio.read(msg, 1);
+//    theChar = msg[0];
+//    
+//    if(msg[0] == '*'){
+//      digitalWrite(LED, HIGH);
+//      radio.read(msg, 1);
+//      theChar = msg[0];
+//      
+//      while(msg[0] != '&'){
+//        
+//        if (theChar != NULL){
+//        theMessage.concat(theChar);
+//        }
+//        
+//        radio.read(msg, 1);
+//        theChar = msg[0];
+//      }
+//    }
+//  }
+  
 }
