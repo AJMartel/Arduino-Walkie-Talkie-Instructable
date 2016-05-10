@@ -7838,6 +7838,7 @@ LED to indicate when a call is being made
 LED to indicate when two devices are talking
 
 some button to switch channels and LEDs to indicate what channel we're on</text>
+<text x="-10.16" y="-63.5" size="5.08" layer="91">Some sort of volume control</text>
 </plain>
 <instances>
 <instance part="U1" gate="G$1" x="27.94" y="38.1"/>
