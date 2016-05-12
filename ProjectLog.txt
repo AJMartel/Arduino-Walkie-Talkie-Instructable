@@ -1,0 +1,7 @@
+Wednesday, May 11, 2016
+- Trying to figure out a way to get a "CALL Button" which will
+play the Mighty Morphin' Power Rangers tone.
+
+Maybe a square wave to DC voltage converter
+A duty cycle detector
+or just do it in hardware

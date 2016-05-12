@@ -61,124 +61,64 @@ Input/Microphone: Analog pin A0 on all boards
 #include <SPI.h>
 #include <RF24Audio.h>
 #include "printf.h"    // General includes for radio and audio lib
-
-
-#include <RF24_config.h>
-#include <nRF24L01.h>
-
+#include <MusicPlayer.h>
 
 RF24 radio(7,8);    // Set radio up using pins 7 (CE) 8 (CS)
 RF24Audio rfAudio(radio,0); // Set up the audio using the radio, and set to radio number 0
 
-const uint8_t talkButton = 3;
+const uint8_t callDetector = 3;
+const uint16_t callThreshold = 20; //20% duty cycle?
+//
+//
+//int melody[] = { E6,E6,D6,E6,G6,E6  };
+int melody[] = { E7,E7,D7,E7,G7,E7 };
+
+//unsigned int duration[] = { E, E, E, E, E, E  };
+unsigned int duration[] = { E, E, S, E, E, E  };
+//unsigned int duration[] = { S, S, S, S, S, S };
+
+int melodyPin = 5;
+int melodyLength = 6;
+
+MusicPlayer myPlayer = MusicPlayer(melodyPin);
 
 
-
-
-int messageLength = 12;
-int msg[1];
-const uint64_t pipe = 0xE8E8F0F0E1LL;
-int lastmsg = 1;
-//String theMessage = "";
-char theChar = 0;
-
-
-
-const uint8_t call = 5;
-
-void setup()
-{      
+void setup() {      
   Serial.begin(115200);
-
-  pinMode(call, INPUT);
-  //digitalWrite(LED, LOW);
   
   printf_begin();
   radio.begin();
   radio.printDetails();
   rfAudio.begin();
 
-  pinMode(talkButton, INPUT);
+  pinMode(callDetector, INPUT);
 
-  //sets interrupt to check for button talk abutton press
-  attachInterrupt(digitalPinToInterrupt(talkButton), talk, RISING);
+  //sets interrupt to check for call button
+  //attachInterrupt(digitalPinToInterrupt(callDetector), sample, RISING);
   
   //sets the default state for each module to recevie
   rfAudio.receive();
 }
 
 
-//void talk()
-//Called in response to interrupt. Checks the state of the button.
-//If the button is pressed (and held) enters transmit mode to send
-//audio. If button is release, enters receive mode to listen.
-void talk()
+//horrible way to use interrupts :)
+void sample()
 {
-  if (digitalRead(talkButton)) rfAudio.transmit();
-  else rfAudio.receive();
+  unsigned long time0 = micros();
+  unsigned long i = 0;
+
+  while((micros() - time0) < 2000) //2 milliseconds
+  {
+    if (digitalRead(callDetector)) i++;
+    delayMicroseconds(20);
+  }
+
+  if (i > callThreshold) myPlayer.playMelody(melody, duration, melodyLength);
+  delay(200);
 }
-
-
-//void call()
-//{
-//  
-//  if (digitalRead(talkButton)) rfAudio.transmit();
-//  else rfAudio.receive();
-//}
 
 
 void loop()
 {
-  Serial.println(digitalRead(call));
-  if(digitalRead(call))
-  {
-    
-    String theMessage = "*A";
-    int messageSize = theMessage.length();
-  
-    for (int i = 0; i < messageSize; i++)
-    {
-      int charToSend[1];
-      charToSend[0] = theMessage.charAt(i);
-        radio.begin();
-  radio.openWritingPipe(pipe);
-      
-      radio.write(charToSend, 1);
-      Serial.println("hello");
-      Serial.println(theMessage);
-    }
-  
-    //send the 'terminate string' value
-    msg[0] = '&';
-    radio.write(msg,1);
-    Serial.println(theMessage);
-  
-    delay(5);
-  }
-  delay(10);
-//
-//  if(radio.available())
-//  {
-//    //Serial.println("got the call");
-//    
-//    radio.read(msg, 1);
-//    theChar = msg[0];
-//    
-//    if(msg[0] == '*'){
-//      digitalWrite(LED, HIGH);
-//      radio.read(msg, 1);
-//      theChar = msg[0];
-//      
-//      while(msg[0] != '&'){
-//        
-//        if (theChar != NULL){
-//        theMessage.concat(theChar);
-//        }
-//        
-//        radio.read(msg, 1);
-//        theChar = msg[0];
-//      }
-//    }
-//  }
-  
+  if(digitalRead(callDetector)) sample();
 }
