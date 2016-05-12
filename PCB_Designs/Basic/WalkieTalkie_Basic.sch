@@ -7795,6 +7795,24 @@ Source: http://www.analog.com/static/imported-files/data_sheets/AD8603_8607_8609
 <text x="-2.54" y="5.08" size="0.762" layer="25">&gt;NAME</text>
 <text x="-2.54" y="-6.35" size="0.762" layer="27">nRF24L01</text>
 </package>
+<package name="SC-70-5">
+<wire x1="1" y1="0.625" x2="1" y2="-0.625" width="0.127" layer="51"/>
+<wire x1="-1" y1="-0.625" x2="-1" y2="0.625" width="0.127" layer="51"/>
+<wire x1="-1" y1="-0.625" x2="1" y2="-0.625" width="0.127" layer="51"/>
+<wire x1="-1" y1="0.625" x2="1" y2="0.625" width="0.127" layer="51"/>
+<smd name="1" x="-0.65" y="-0.825" dx="0.4" dy="0.75" layer="1" cream="no"/>
+<smd name="2" x="0" y="-0.825" dx="0.4" dy="0.75" layer="1" cream="no"/>
+<smd name="3" x="0.65" y="-0.825" dx="0.4" dy="0.75" layer="1" cream="no"/>
+<smd name="4" x="0.65" y="0.825" dx="0.4" dy="0.75" layer="1" cream="no"/>
+<smd name="5" x="-0.65" y="0.825" dx="0.4" dy="0.75" layer="1" cream="no"/>
+<text x="-0.889" y="1.524" size="0.4064" layer="25">&gt;NAME</text>
+<text x="-0.762" y="-0.254" size="0.4064" layer="27">&gt;VALUE</text>
+<rectangle x1="-0.85" y1="0.45" x2="-0.45" y2="1.2" layer="31"/>
+<rectangle x1="0.45" y1="0.45" x2="0.85" y2="1.2" layer="31"/>
+<rectangle x1="-0.8382" y1="-1.1684" x2="-0.508" y2="-0.4826" layer="31"/>
+<rectangle x1="-0.1651" y1="-1.1684" x2="0.1651" y2="-0.4826" layer="31"/>
+<rectangle x1="0.508" y1="-1.1684" x2="0.8382" y2="-0.4826" layer="31"/>
+</package>
 </packages>
 <symbols>
 <symbol name="NRF24L01-BREAKOUT">
@@ -7813,6 +7831,18 @@ Source: http://www.analog.com/static/imported-files/data_sheets/AD8603_8607_8609
 <text x="-7.62" y="8.89" size="1.27" layer="95">&gt;NAME</text>
 <text x="-7.62" y="-12.7" size="1.27" layer="96">nRF24L01</text>
 </symbol>
+<symbol name="MIC5365/6">
+<wire x1="-7.62" y1="7.62" x2="5.08" y2="7.62" width="0.254" layer="94"/>
+<wire x1="5.08" y1="7.62" x2="5.08" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="5.08" y1="-7.62" x2="-7.62" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-7.62" x2="-7.62" y2="7.62" width="0.254" layer="94"/>
+<pin name="IN" x="-10.16" y="5.08" length="short"/>
+<pin name="GND" x="-10.16" y="0" length="short"/>
+<pin name="EN" x="-10.16" y="-5.08" length="short"/>
+<pin name="OUT" x="7.62" y="5.08" length="short" rot="R180"/>
+<text x="-7.62" y="8.89" size="1.27" layer="95">&gt;NAME</text>
+<text x="-7.62" y="-10.16" size="1.27" layer="96">MIC5365/6</text>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="NRF24L01-BREAKOUT">
@@ -7830,6 +7860,24 @@ Source: http://www.analog.com/static/imported-files/data_sheets/AD8603_8607_8609
 <connect gate="G$1" pin="MOSI" pad="6"/>
 <connect gate="G$1" pin="SCK" pad="5"/>
 <connect gate="G$1" pin="VDD" pad="2"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MIC5365/6">
+<gates>
+<gate name="G$1" symbol="MIC5365/6" x="2.54" y="2.54"/>
+</gates>
+<devices>
+<device name="" package="SC-70-5">
+<connects>
+<connect gate="G$1" pin="EN" pad="3"/>
+<connect gate="G$1" pin="GND" pad="2"/>
+<connect gate="G$1" pin="IN" pad="1"/>
+<connect gate="G$1" pin="OUT" pad="5"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -8130,6 +8178,7 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/21314g.pdf</description>
 <part name="SUPPLY10" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
 <part name="U$1" library="SparkFun-Connectors" deviceset="AUDIO-JACK3" device=""/>
 <part name="U$4" library="OrlandoRonMod" deviceset="AP2120N" device=""/>
+<part name="U$5" library="Orlando" deviceset="MIC5365/6" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -8243,6 +8292,7 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <instance part="SUPPLY10" gate="G$1" x="139.7" y="101.6" rot="MR0"/>
 <instance part="U$1" gate="G$1" x="281.94" y="-48.26" rot="MR0"/>
 <instance part="U$4" gate="G$1" x="165.1" y="17.78"/>
+<instance part="U$5" gate="G$1" x="172.72" y="48.26"/>
 </instances>
 <busses>
 </busses>
