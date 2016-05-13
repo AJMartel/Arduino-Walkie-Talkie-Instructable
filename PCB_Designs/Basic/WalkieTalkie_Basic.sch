@@ -6504,6 +6504,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="-1.016" y="3.556" size="1.778" layer="96">&gt;VALUE</text>
 <pin name="3.3V" x="0" y="0" visible="off" length="short" direction="sup" rot="R90"/>
 </symbol>
+<symbol name="V_BATT">
+<wire x1="0.762" y1="1.27" x2="0" y2="2.54" width="0.254" layer="94"/>
+<wire x1="0" y1="2.54" x2="-0.762" y2="1.27" width="0.254" layer="94"/>
+<text x="-1.016" y="3.556" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="V_BATT" x="0" y="0" visible="off" length="short" direction="sup" rot="R90"/>
+</symbol>
 </symbols>
 <devicesets>
 <deviceset name="GND" prefix="GND">
@@ -6523,6 +6529,20 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <description>&lt;b&gt;SUPPLY SYMBOL&lt;/b&gt;</description>
 <gates>
 <gate name="G$1" symbol="3.3V" x="0" y="0"/>
+</gates>
+<devices>
+<device name="">
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="V_BATT" prefix="SUPPLY">
+<description>&lt;b&gt;V_BATT&lt;/b&gt;&lt;br&gt;
+Generic symbol for the battery input to a system.</description>
+<gates>
+<gate name="G$1" symbol="V_BATT" x="0" y="0"/>
 </gates>
 <devices>
 <device name="">
@@ -7339,25 +7359,14 @@ Standard 10-pin 0.1" header. Use with straight break away headers (SKU : PRT-001
 <package name="CA-301">
 <pad name="1" x="0" y="0" drill="0.4" shape="octagon"/>
 <pad name="2" x="1.2" y="0" drill="0.4" shape="octagon"/>
+<text x="-1.27" y="1.27" size="0.635" layer="25">&gt;Name</text>
+<text x="-1.27" y="-1.905" size="0.635" layer="25">&gt;Value</text>
 </package>
-<package name="SOT23">
-<description>&lt;B&gt;DIODE&lt;/B&gt;</description>
-<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.6604" width="0.1524" layer="51"/>
-<wire x1="1.4224" y1="-0.6604" x2="-1.4224" y2="-0.6604" width="0.1524" layer="51"/>
-<wire x1="-1.4224" y1="-0.6604" x2="-1.4224" y2="0.6604" width="0.1524" layer="51"/>
-<wire x1="-1.4224" y1="0.6604" x2="1.4224" y2="0.6604" width="0.1524" layer="51"/>
-<wire x1="-1.4224" y1="-0.1524" x2="-1.4224" y2="0.6604" width="0.1524" layer="21"/>
-<wire x1="-1.4224" y1="0.6604" x2="-0.8636" y2="0.6604" width="0.1524" layer="21"/>
-<wire x1="1.4224" y1="0.6604" x2="1.4224" y2="-0.1524" width="0.1524" layer="21"/>
-<wire x1="0.8636" y1="0.6604" x2="1.4224" y2="0.6604" width="0.1524" layer="21"/>
-<smd name="3" x="0" y="1.1" dx="1" dy="1.4" layer="1"/>
-<smd name="2" x="0.95" y="-1.1" dx="1" dy="1.4" layer="1"/>
-<smd name="1" x="-0.95" y="-1.1" dx="1" dy="1.4" layer="1"/>
-<text x="-1.905" y="1.905" size="1.27" layer="25">&gt;NAME</text>
-<text x="-1.905" y="-3.175" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-0.2286" y1="0.7112" x2="0.2286" y2="1.2954" layer="51"/>
-<rectangle x1="0.7112" y1="-1.2954" x2="1.1684" y2="-0.7112" layer="51"/>
-<rectangle x1="-1.1684" y1="-1.2954" x2="-0.7112" y2="-0.7112" layer="51"/>
+<package name="HOLE">
+<pad name="P$1" x="-1.151" y="0" drill="1.016"/>
+<pad name="P$2" x="1.135" y="0" drill="1.016"/>
+<text x="-2.54" y="1.27" size="0.762" layer="25">&gt;NAME</text>
+<text x="-2.54" y="-1.905" size="0.762" layer="27">&gt;VALUE</text>
 </package>
 </packages>
 <symbols>
@@ -7377,14 +7386,29 @@ Standard 10-pin 0.1" header. Use with straight break away headers (SKU : PRT-001
 <pin name="2" x="2.54" y="0" visible="off" length="point" direction="pas" swaplevel="1" rot="R180"/>
 <pin name="1" x="-2.54" y="0" visible="off" length="point" direction="pas" swaplevel="1"/>
 </symbol>
-<symbol name="AP2120">
-<wire x1="-7.62" y1="2.54" x2="10.16" y2="2.54" width="0.254" layer="94"/>
-<wire x1="10.16" y1="2.54" x2="10.16" y2="-7.62" width="0.254" layer="94"/>
-<wire x1="10.16" y1="-7.62" x2="-7.62" y2="-7.62" width="0.254" layer="94"/>
-<wire x1="-7.62" y1="-7.62" x2="-7.62" y2="2.54" width="0.254" layer="94"/>
-<pin name="VIN" x="-12.7" y="0" length="middle"/>
-<pin name="VOUT" x="15.24" y="0" length="middle" rot="R180"/>
-<pin name="GND" x="-12.7" y="-5.08" length="middle"/>
+<symbol name="PS">
+<wire x1="0.635" y1="-4.572" x2="-0.635" y2="-4.572" width="0.1524" layer="94"/>
+<wire x1="0.635" y1="-4.572" x2="0.635" y2="0" width="0.1524" layer="94"/>
+<wire x1="0.635" y1="0" x2="-0.635" y2="0" width="0.1524" layer="94"/>
+<wire x1="-0.635" y1="0" x2="-0.635" y2="-4.572" width="0.1524" layer="94"/>
+<wire x1="0.381" y1="-3.048" x2="-0.381" y2="-2.794" width="0.1524" layer="94"/>
+<wire x1="-0.381" y1="-2.794" x2="0.381" y2="-2.54" width="0.1524" layer="94"/>
+<wire x1="0.381" y1="-2.54" x2="-0.381" y2="-2.286" width="0.1524" layer="94"/>
+<wire x1="-0.381" y1="-2.286" x2="0.381" y2="-2.032" width="0.1524" layer="94"/>
+<wire x1="0.381" y1="-2.032" x2="-0.381" y2="-1.778" width="0.1524" layer="94"/>
+<wire x1="-0.381" y1="-1.778" x2="0.381" y2="-1.524" width="0.1524" layer="94"/>
+<wire x1="0.381" y1="-1.524" x2="-0.381" y2="-1.27" width="0.1524" layer="94"/>
+<wire x1="-0.381" y1="-1.27" x2="0.381" y2="-1.016" width="0.1524" layer="94"/>
+<wire x1="0.381" y1="-1.016" x2="-0.381" y2="-0.762" width="0.1524" layer="94"/>
+<wire x1="-0.381" y1="-0.762" x2="0.381" y2="-0.508" width="0.1524" layer="94"/>
+<wire x1="0.508" y1="-5.207" x2="-0.508" y2="-5.207" width="0.1524" layer="94"/>
+<wire x1="-0.508" y1="-5.207" x2="-0.508" y2="-5.715" width="0.1524" layer="94"/>
+<wire x1="-0.508" y1="-5.715" x2="0" y2="-6.35" width="0.1524" layer="94"/>
+<wire x1="0" y1="-6.35" x2="0.508" y2="-5.715" width="0.1524" layer="94"/>
+<wire x1="0.508" y1="-5.715" x2="0.508" y2="-5.207" width="0.1524" layer="94"/>
+<text x="-1.016" y="-6.35" size="1.778" layer="95" rot="R90">&gt;NAME</text>
+<rectangle x1="-0.381" y1="-5.207" x2="0.381" y2="-4.572" layer="94"/>
+<pin name="TP" x="0" y="2.54" visible="off" length="short" direction="in" rot="R270"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -7404,16 +7428,16 @@ Standard 10-pin 0.1" header. Use with straight break away headers (SKU : PRT-001
 </device>
 </devices>
 </deviceset>
-<deviceset name="AP2120N">
+<deviceset name="BATT-CONNECT">
 <gates>
-<gate name="G$1" symbol="AP2120" x="0" y="2.54"/>
+<gate name="G$2" symbol="PS" x="5.08" y="2.54"/>
+<gate name="G$1" symbol="PS" x="-5.08" y="2.54"/>
 </gates>
 <devices>
-<device name="" package="SOT23">
+<device name="" package="HOLE">
 <connects>
-<connect gate="G$1" pin="GND" pad="1"/>
-<connect gate="G$1" pin="VIN" pad="3"/>
-<connect gate="G$1" pin="VOUT" pad="2"/>
+<connect gate="G$1" pin="TP" pad="P$1"/>
+<connect gate="G$2" pin="TP" pad="P$2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -7813,6 +7837,19 @@ Source: http://www.analog.com/static/imported-files/data_sheets/AD8603_8607_8609
 <rectangle x1="-0.1651" y1="-1.1684" x2="0.1651" y2="-0.4826" layer="31"/>
 <rectangle x1="0.508" y1="-1.1684" x2="0.8382" y2="-0.4826" layer="31"/>
 </package>
+<package name="PIEZO-1">
+<pad name="+" x="-2.5" y="0" drill="0.7"/>
+<pad name="-" x="2.5" y="0" drill="0.7"/>
+<circle x="0" y="0" radius="6.1" width="0.127" layer="21"/>
+<text x="-4.445" y="1.27" size="1.778" layer="21">+</text>
+</package>
+<package name="MIC_01">
+<pad name="+" x="-1" y="0.95" drill="0.5" rot="R270"/>
+<pad name="-" x="-1" y="-0.95" drill="0.5" rot="R270"/>
+<circle x="0" y="0" radius="3" width="0.127" layer="21"/>
+<text x="-2.54" y="3.81" size="1.016" layer="25">&gt;Name</text>
+<text x="-2.54" y="-4.445" size="1.016" layer="27">&gt;Value</text>
+</package>
 </packages>
 <symbols>
 <symbol name="NRF24L01-BREAKOUT">
@@ -7842,6 +7879,35 @@ Source: http://www.analog.com/static/imported-files/data_sheets/AD8603_8607_8609
 <pin name="OUT" x="7.62" y="5.08" length="short" rot="R180"/>
 <text x="-7.62" y="8.89" size="1.27" layer="95">&gt;NAME</text>
 <text x="-7.62" y="-10.16" size="1.27" layer="96">MIC5365/6</text>
+</symbol>
+<symbol name="PIEZO">
+<wire x1="-7.62" y1="1.27" x2="-2.54" y2="1.27" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="1.27" x2="-2.54" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="-2.54" y1="-1.27" x2="-7.62" y2="-1.27" width="0.254" layer="94"/>
+<wire x1="-7.62" y1="-1.27" x2="-7.62" y2="1.27" width="0.254" layer="94"/>
+<wire x1="-6.35" y1="2.54" x2="-5.08" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="2.54" x2="-3.81" y2="2.54" width="0.254" layer="94"/>
+<wire x1="-6.35" y1="-2.54" x2="-5.08" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-2.54" x2="-3.81" y2="-2.54" width="0.254" layer="94"/>
+<wire x1="-8.89" y1="3.81" x2="-1.27" y2="3.81" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="3.81" x2="-1.27" y2="-3.81" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="-3.81" x2="-8.89" y2="-3.81" width="0.254" layer="94"/>
+<wire x1="-8.89" y1="-3.81" x2="-8.89" y2="3.81" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="2.54" x2="-5.08" y2="7.62" width="0.254" layer="94"/>
+<wire x1="-5.08" y1="-2.54" x2="-5.08" y2="-7.62" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="3.81" x2="3.81" y2="8.89" width="0.254" layer="94"/>
+<wire x1="-1.27" y1="-3.81" x2="3.81" y2="-8.89" width="0.254" layer="94"/>
+<wire x1="3.81" y1="-8.89" x2="3.81" y2="8.89" width="0.254" layer="94"/>
+<pin name="+" x="-5.08" y="7.62" visible="pin" length="point" rot="R180"/>
+<pin name="-" x="-5.08" y="-7.62" visible="pin" length="point" rot="R180"/>
+</symbol>
+<symbol name="MIC">
+<wire x1="0" y1="0" x2="0" y2="-7.62" width="0.254" layer="94" curve="-145"/>
+<wire x1="0" y1="-7.62" x2="0" y2="0" width="0.254" layer="94"/>
+<pin name="+" x="5.08" y="-2.54" visible="pin" length="short" rot="R180"/>
+<pin name="-" x="5.08" y="-5.08" visible="pin" length="short" rot="R180"/>
+<text x="0" y="1.27" size="1.016" layer="95">&gt;Name</text>
+<text x="0" y="-10.16" size="1.016" layer="96">&gt;Value</text>
 </symbol>
 </symbols>
 <devicesets>
@@ -7878,6 +7944,38 @@ Source: http://www.analog.com/static/imported-files/data_sheets/AD8603_8607_8609
 <connect gate="G$1" pin="GND" pad="2"/>
 <connect gate="G$1" pin="IN" pad="1"/>
 <connect gate="G$1" pin="OUT" pad="5"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="PS1240P02CT3">
+<gates>
+<gate name="G$1" symbol="PIEZO" x="5.08" y="0"/>
+</gates>
+<devices>
+<device name="P" package="PIEZO-1">
+<connects>
+<connect gate="G$1" pin="+" pad="+"/>
+<connect gate="G$1" pin="-" pad="-"/>
+</connects>
+<technologies>
+<technology name=""/>
+</technologies>
+</device>
+</devices>
+</deviceset>
+<deviceset name="MIC_CMC-5042PF-AC">
+<gates>
+<gate name="G$1" symbol="MIC" x="0" y="5.08"/>
+</gates>
+<devices>
+<device name="" package="MIC_01">
+<connects>
+<connect gate="G$1" pin="+" pad="+"/>
+<connect gate="G$1" pin="-" pad="-"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -8087,7 +8185,7 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/21314g.pdf</description>
 </class>
 </classes>
 <parts>
-<part name="U1" library="SparkFun-DigitalIC" deviceset="ATMEGA328_SMT-OHMOD" device="" value="ATMEGA328P"/>
+<part name="ARDUINO" library="SparkFun-DigitalIC" deviceset="ATMEGA328_SMT-OHMOD" device="" value="ATMEGA328P"/>
 <part name="Q1" library="SparkFun-DiscreteSemi" deviceset="MOSFET-NCHANNEL" device="BSS123LT1G"/>
 <part name="R1" library="resistor" deviceset="R-US_" device="R0402" value="900k"/>
 <part name="R2" library="resistor" deviceset="R-US_" device="R0402" value="10k"/>
@@ -8101,8 +8199,8 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/21314g.pdf</description>
 <part name="SUPPLY1" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
 <part name="SUPPLY2" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
 <part name="SUPPLY3" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
-<part name="U$2" library="OrlandoRonMod" deviceset="CRYSTAL-CA-310" device=""/>
-<part name="JP1" library="SparkFun-Connectors" deviceset="M10" device="NO_SILK_PTH_FEMALE"/>
+<part name="XTAL" library="OrlandoRonMod" deviceset="CRYSTAL-CA-310" device=""/>
+<part name="PROGRAM/BOOTLOAD" library="SparkFun-Connectors" deviceset="M10" device="NO_SILK_PTH_FEMALE"/>
 <part name="R7" library="resistor" deviceset="R-US_" device="R0402" value="1.5k"/>
 <part name="R8" library="resistor" deviceset="R-US_" device="R0402" value="1.5k"/>
 <part name="R9" library="resistor" deviceset="R-US_" device="R0402" value="1.5k"/>
@@ -8131,8 +8229,6 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/21314g.pdf</description>
 <part name="C15" library="resistor" deviceset="C-EU" device="C0402" value="100n"/>
 <part name="GND14" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND15" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="C16" library="resistor" deviceset="C-EU" device="C0402" value="100n"/>
-<part name="GND16" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND17" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="R16" library="resistor" deviceset="R-US_" device="R0402" value="10k"/>
 <part name="SUPPLY5" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
@@ -8177,13 +8273,26 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/21314g.pdf</description>
 <part name="C21" library="resistor" deviceset="C-EU" device="C0402" value="100n"/>
 <part name="SUPPLY10" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
 <part name="U$1" library="SparkFun-Connectors" deviceset="AUDIO-JACK3" device=""/>
-<part name="U$4" library="OrlandoRonMod" deviceset="AP2120N" device=""/>
-<part name="U$5" library="Orlando" deviceset="MIC5365/6" device=""/>
+<part name="LDO" library="Orlando" deviceset="MIC5365/6" device=""/>
+<part name="GND25" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="U$4" library="OrlandoRonMod" deviceset="BATT-CONNECT" device=""/>
+<part name="GND26" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="SUPPLY13" library="SparkFun-Aesthetics" deviceset="V_BATT" device=""/>
+<part name="C23" library="resistor" deviceset="C-EU" device="C0402" value="100n"/>
+<part name="GND27" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="SUPPLY14" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
+<part name="C24" library="resistor" deviceset="C-EU" device="C0402" value="100n"/>
+<part name="GND28" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="SUPPLY12" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
+<part name="GND29" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="U$2" library="Orlando" deviceset="PS1240P02CT3" device="P"/>
+<part name="GND30" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="MIC" library="Orlando" deviceset="MIC_CMC-5042PF-AC" device=""/>
 </parts>
 <sheets>
 <sheet>
 <plain>
-<text x="-7.62" y="-53.34" size="1.778" layer="91">LED to indicate when the device is powered
+<text x="0" y="-78.74" size="1.778" layer="91">LED to indicate when the device is powered
 
 Maybe a switch to turn it off, or a potentiometer to turn the volume down
 
@@ -8194,16 +8303,16 @@ LED to indicate when a call is being made
 LED to indicate when two devices are talking
 
 some button to switch channels and LEDs to indicate what channel we're on</text>
-<text x="-10.16" y="-63.5" size="5.08" layer="91">Some sort of volume control</text>
+<text x="-43.18" y="-81.28" size="5.08" layer="91">Some sort of volume control</text>
 </plain>
 <instances>
-<instance part="U1" gate="G$1" x="27.94" y="38.1"/>
+<instance part="ARDUINO" gate="G$1" x="27.94" y="38.1"/>
 <instance part="Q1" gate="G$1" x="45.72" y="91.44"/>
 <instance part="R1" gate="G$1" x="35.56" y="99.06" rot="R90"/>
 <instance part="R2" gate="G$1" x="45.72" y="114.3" rot="R90"/>
 <instance part="R3" gate="G$1" x="17.78" y="99.06" rot="R90"/>
 <instance part="C1" gate="G$1" x="25.4" y="91.44" rot="R90"/>
-<instance part="GND2" gate="1" x="45.72" y="81.28"/>
+<instance part="GND2" gate="1" x="45.72" y="78.74"/>
 <instance part="TALK" gate="S" x="88.9" y="81.28" rot="MR0"/>
 <instance part="R4" gate="G$1" x="96.52" y="91.44" rot="MR270"/>
 <instance part="GND1" gate="1" x="99.06" y="66.04" rot="MR0"/>
@@ -8211,8 +8320,11 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <instance part="SUPPLY1" gate="G$1" x="96.52" y="99.06" rot="MR0"/>
 <instance part="SUPPLY2" gate="G$1" x="17.78" y="106.68"/>
 <instance part="SUPPLY3" gate="G$1" x="45.72" y="124.46"/>
-<instance part="U$2" gate="G$1" x="-7.62" y="40.64" rot="R90"/>
-<instance part="JP1" gate="G$1" x="-27.94" y="10.16"/>
+<instance part="XTAL" gate="G$1" x="-7.62" y="40.64" rot="R90"/>
+<instance part="PROGRAM/BOOTLOAD" gate="G$1" x="-40.64" y="5.08" smashed="yes">
+<attribute name="VALUE" x="-40.64" y="-17.78" size="1.778" layer="96"/>
+<attribute name="NAME" x="-40.64" y="13.97" size="1.778" layer="95"/>
+</instance>
 <instance part="R7" gate="G$1" x="129.54" y="-33.02" rot="R180"/>
 <instance part="R8" gate="G$1" x="144.78" y="-33.02" rot="R180"/>
 <instance part="R9" gate="G$1" x="160.02" y="-33.02" rot="R180"/>
@@ -8238,11 +8350,9 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <instance part="GND12" gate="1" x="167.64" y="-78.74"/>
 <instance part="GND13" gate="1" x="182.88" y="-78.74"/>
 <instance part="C14" gate="G$1" x="-20.32" y="38.1" rot="MR180"/>
-<instance part="C15" gate="G$1" x="-12.7" y="27.94" rot="R180"/>
-<instance part="GND14" gate="1" x="-12.7" y="20.32"/>
+<instance part="C15" gate="G$1" x="-5.08" y="30.48" rot="R180"/>
+<instance part="GND14" gate="1" x="-5.08" y="22.86"/>
 <instance part="GND15" gate="1" x="-20.32" y="30.48"/>
-<instance part="C16" gate="G$1" x="-33.02" y="45.72" rot="R180"/>
-<instance part="GND16" gate="1" x="-33.02" y="38.1"/>
 <instance part="GND17" gate="1" x="2.54" y="7.62"/>
 <instance part="R16" gate="G$1" x="0" y="76.2" rot="R90"/>
 <instance part="SUPPLY5" gate="G$1" x="0" y="83.82"/>
@@ -8264,11 +8374,11 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <instance part="R11" gate="G$1" x="330.2" y="-68.58" rot="R270"/>
 <instance part="GND3" gate="1" x="330.2" y="-78.74"/>
 <instance part="GND4" gate="1" x="347.98" y="-73.66"/>
-<instance part="U$3" gate="G$1" x="287.02" y="58.42"/>
-<instance part="D2" gate="G$1" x="96.52" y="25.4"/>
-<instance part="SUPPLY4" gate="G$1" x="302.26" y="66.04"/>
-<instance part="GND9" gate="1" x="302.26" y="45.72"/>
-<instance part="C4" gate="G$1" x="302.26" y="58.42"/>
+<instance part="U$3" gate="G$1" x="25.4" y="-10.16"/>
+<instance part="D2" gate="G$1" x="96.52" y="12.7"/>
+<instance part="SUPPLY4" gate="G$1" x="40.64" y="-2.54"/>
+<instance part="GND9" gate="1" x="40.64" y="-22.86"/>
+<instance part="C4" gate="G$1" x="40.64" y="-10.16"/>
 <instance part="SUPPLY7" gate="G$1" x="337.82" y="-10.16"/>
 <instance part="SUPPLY8" gate="G$1" x="330.2" y="-48.26"/>
 <instance part="GND18" gate="1" x="337.82" y="-38.1"/>
@@ -8278,7 +8388,7 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <instance part="GND19" gate="1" x="365.76" y="-58.42"/>
 <instance part="C20" gate="G$1" x="53.34" y="121.92" rot="R90"/>
 <instance part="GND20" gate="1" x="60.96" y="116.84"/>
-<instance part="R20" gate="G$1" x="96.52" y="12.7" rot="R90"/>
+<instance part="R20" gate="G$1" x="96.52" y="22.86" rot="R90"/>
 <instance part="GND21" gate="1" x="96.52" y="2.54"/>
 <instance part="IC3" gate="G$1" x="109.22" y="33.02" rot="MR180"/>
 <instance part="GND23" gate="1" x="109.22" y="20.32"/>
@@ -8291,24 +8401,53 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <instance part="C21" gate="G$1" x="147.32" y="78.74" rot="MR180"/>
 <instance part="SUPPLY10" gate="G$1" x="139.7" y="101.6" rot="MR0"/>
 <instance part="U$1" gate="G$1" x="281.94" y="-48.26" rot="MR0"/>
-<instance part="U$4" gate="G$1" x="165.1" y="17.78"/>
-<instance part="U$5" gate="G$1" x="172.72" y="48.26"/>
+<instance part="LDO" gate="G$1" x="299.72" y="99.06"/>
+<instance part="GND25" gate="1" x="284.48" y="86.36"/>
+<instance part="U$4" gate="G$2" x="254" y="91.44"/>
+<instance part="U$4" gate="G$1" x="261.62" y="91.44"/>
+<instance part="GND26" gate="1" x="266.7" y="91.44"/>
+<instance part="SUPPLY13" gate="G$1" x="254" y="109.22"/>
+<instance part="C23" gate="G$1" x="276.86" y="99.06" rot="MR0"/>
+<instance part="GND27" gate="1" x="276.86" y="86.36"/>
+<instance part="SUPPLY14" gate="G$1" x="314.96" y="106.68"/>
+<instance part="C24" gate="G$1" x="309.88" y="99.06"/>
+<instance part="GND28" gate="1" x="309.88" y="86.36"/>
+<instance part="SUPPLY12" gate="G$1" x="-10.16" y="7.62"/>
+<instance part="GND29" gate="1" x="-15.24" y="0"/>
+<instance part="U$2" gate="G$1" x="134.62" y="27.94"/>
+<instance part="GND30" gate="1" x="129.54" y="15.24"/>
+<instance part="MIC" gate="G$1" x="12.7" y="88.9"/>
 </instances>
 <busses>
 </busses>
 <nets>
 <net name="D13-SCK" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="PB5(SCK)"/>
+<pinref part="ARDUINO" gate="G$1" pin="PB5(SCK)"/>
 <wire x1="53.34" y1="10.16" x2="55.88" y2="10.16" width="0.1524" layer="91"/>
 <label x="55.88" y="10.16" size="1.27" layer="95" xref="yes"/>
 </segment>
-</net>
-<net name="D10" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="PB2(SS/OC1B)"/>
+<pinref part="PROGRAM/BOOTLOAD" gate="G$1" pin="1"/>
+<wire x1="-30.48" y1="-12.7" x2="-27.94" y2="-12.7" width="0.1524" layer="91"/>
+<label x="-27.94" y="-12.7" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="SCK"/>
+<wire x1="12.7" y1="-10.16" x2="10.16" y2="-10.16" width="0.1524" layer="91"/>
+<label x="10.16" y="-10.16" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="D10-SPEAK2" class="0">
+<segment>
+<pinref part="ARDUINO" gate="G$1" pin="PB2(SS/OC1B)"/>
 <wire x1="53.34" y1="17.78" x2="55.88" y2="17.78" width="0.1524" layer="91"/>
 <label x="55.88" y="17.78" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<label x="119.38" y="-63.5" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="R12" gate="G$1" pin="2"/>
+<wire x1="119.38" y1="-63.5" x2="124.46" y2="-63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$5" class="0">
@@ -8326,15 +8465,24 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <segment>
 <pinref part="C1" gate="G$1" pin="1"/>
 <pinref part="R3" gate="G$1" pin="1"/>
-<wire x1="22.86" y1="91.44" x2="17.78" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="22.86" y1="91.44" x2="20.32" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="91.44" x2="17.78" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="17.78" y1="91.44" x2="17.78" y2="93.98" width="0.1524" layer="91"/>
+<pinref part="MIC" gate="G$1" pin="+"/>
+<wire x1="17.78" y1="86.36" x2="20.32" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="20.32" y1="86.36" x2="20.32" y2="91.44" width="0.1524" layer="91"/>
+<junction x="20.32" y="91.44"/>
 </segment>
 </net>
 <net name="GND" class="0">
 <segment>
 <pinref part="Q1" gate="G$1" pin="S"/>
 <pinref part="GND2" gate="1" pin="GND"/>
+<wire x1="45.72" y1="81.28" x2="45.72" y2="83.82" width="0.1524" layer="91"/>
+<pinref part="MIC" gate="G$1" pin="-"/>
 <wire x1="45.72" y1="83.82" x2="45.72" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="17.78" y1="83.82" x2="45.72" y2="83.82" width="0.1524" layer="91"/>
+<junction x="45.72" y="83.82"/>
 </segment>
 <segment>
 <pinref part="C5" gate="G$1" pin="2"/>
@@ -8379,7 +8527,7 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <segment>
 <pinref part="C15" gate="G$1" pin="1"/>
 <pinref part="GND14" gate="1" pin="GND"/>
-<wire x1="-12.7" y1="22.86" x2="-12.7" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="-5.08" y1="25.4" x2="-5.08" y2="27.94" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C14" gate="G$1" pin="1"/>
@@ -8387,18 +8535,13 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <wire x1="-20.32" y1="33.02" x2="-20.32" y2="35.56" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="C16" gate="G$1" pin="1"/>
-<pinref part="GND16" gate="1" pin="GND"/>
-<wire x1="-33.02" y1="40.64" x2="-33.02" y2="43.18" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="U1" gate="G$1" pin="GND@2"/>
+<pinref part="ARDUINO" gate="G$1" pin="GND@2"/>
 <wire x1="5.08" y1="12.7" x2="2.54" y2="12.7" width="0.1524" layer="91"/>
 <wire x1="2.54" y1="12.7" x2="2.54" y2="15.24" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="AGND"/>
+<pinref part="ARDUINO" gate="G$1" pin="AGND"/>
 <wire x1="2.54" y1="15.24" x2="2.54" y2="17.78" width="0.1524" layer="91"/>
 <wire x1="2.54" y1="17.78" x2="5.08" y2="17.78" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="GND@1"/>
+<pinref part="ARDUINO" gate="G$1" pin="GND@1"/>
 <wire x1="5.08" y1="15.24" x2="2.54" y2="15.24" width="0.1524" layer="91"/>
 <junction x="2.54" y="15.24"/>
 <pinref part="GND17" gate="1" pin="GND"/>
@@ -8417,12 +8560,12 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 </segment>
 <segment>
 <pinref part="U$3" gate="G$1" pin="GND"/>
-<wire x1="299.72" y1="50.8" x2="302.26" y2="50.8" width="0.1524" layer="91"/>
+<wire x1="38.1" y1="-17.78" x2="40.64" y2="-17.78" width="0.1524" layer="91"/>
 <pinref part="GND9" gate="1" pin="GND"/>
-<wire x1="302.26" y1="50.8" x2="302.26" y2="48.26" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="-17.78" x2="40.64" y2="-20.32" width="0.1524" layer="91"/>
 <pinref part="C4" gate="G$1" pin="2"/>
-<wire x1="302.26" y1="53.34" x2="302.26" y2="50.8" width="0.1524" layer="91"/>
-<junction x="302.26" y="50.8"/>
+<wire x1="40.64" y1="-15.24" x2="40.64" y2="-17.78" width="0.1524" layer="91"/>
+<junction x="40.64" y="-17.78"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="P" pin="V-"/>
@@ -8445,11 +8588,6 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <pinref part="GND20" gate="1" pin="GND"/>
 <wire x1="58.42" y1="121.92" x2="60.96" y2="121.92" width="0.1524" layer="91"/>
 <wire x1="60.96" y1="121.92" x2="60.96" y2="119.38" width="0.1524" layer="91"/>
-</segment>
-<segment>
-<pinref part="R20" gate="G$1" pin="1"/>
-<pinref part="GND21" gate="1" pin="GND"/>
-<wire x1="96.52" y1="5.08" x2="96.52" y2="7.62" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="IC3" gate="G$1" pin="V+"/>
@@ -8484,6 +8622,50 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <wire x1="147.32" y1="73.66" x2="142.24" y2="73.66" width="0.1524" layer="91"/>
 <junction x="142.24" y="73.66"/>
 </segment>
+<segment>
+<pinref part="LDO" gate="G$1" pin="GND"/>
+<wire x1="289.56" y1="99.06" x2="284.48" y2="99.06" width="0.1524" layer="91"/>
+<wire x1="284.48" y1="99.06" x2="284.48" y2="88.9" width="0.1524" layer="91"/>
+<pinref part="GND25" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="U$4" gate="G$1" pin="TP"/>
+<wire x1="261.62" y1="93.98" x2="261.62" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="261.62" y1="96.52" x2="266.7" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="266.7" y1="96.52" x2="266.7" y2="93.98" width="0.1524" layer="91"/>
+<pinref part="GND26" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="C23" gate="G$1" pin="2"/>
+<pinref part="GND27" gate="1" pin="GND"/>
+<wire x1="276.86" y1="88.9" x2="276.86" y2="93.98" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="C24" gate="G$1" pin="2"/>
+<pinref part="GND28" gate="1" pin="GND"/>
+<wire x1="309.88" y1="88.9" x2="309.88" y2="93.98" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="PROGRAM/BOOTLOAD" gate="G$1" pin="9"/>
+<pinref part="GND29" gate="1" pin="GND"/>
+<wire x1="-30.48" y1="7.62" x2="-27.94" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="-27.94" y1="7.62" x2="-15.24" y2="7.62" width="0.1524" layer="91"/>
+<wire x1="-15.24" y1="7.62" x2="-15.24" y2="2.54" width="0.1524" layer="91"/>
+<pinref part="PROGRAM/BOOTLOAD" gate="G$1" pin="10"/>
+<wire x1="-30.48" y1="10.16" x2="-27.94" y2="10.16" width="0.1524" layer="91"/>
+<wire x1="-27.94" y1="10.16" x2="-27.94" y2="7.62" width="0.1524" layer="91"/>
+<junction x="-27.94" y="7.62"/>
+</segment>
+<segment>
+<pinref part="U$2" gate="G$1" pin="-"/>
+<pinref part="GND30" gate="1" pin="GND"/>
+<wire x1="129.54" y1="17.78" x2="129.54" y2="20.32" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="GND21" gate="1" pin="GND"/>
+<pinref part="D2" gate="G$1" pin="C"/>
+<wire x1="96.52" y1="7.62" x2="96.52" y2="5.08" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="3.3V" class="0">
 <segment>
@@ -8508,13 +8690,13 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <segment>
 <pinref part="SUPPLY6" gate="G$1" pin="3.3V"/>
 <wire x1="-2.54" y1="60.96" x2="-2.54" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="AVCC"/>
+<pinref part="ARDUINO" gate="G$1" pin="AVCC"/>
 <wire x1="5.08" y1="63.5" x2="2.54" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="2.54" y1="63.5" x2="2.54" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="VCC@2"/>
+<pinref part="ARDUINO" gate="G$1" pin="VCC@2"/>
 <wire x1="2.54" y1="60.96" x2="2.54" y2="58.42" width="0.1524" layer="91"/>
 <wire x1="2.54" y1="58.42" x2="5.08" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="VCC@1"/>
+<pinref part="ARDUINO" gate="G$1" pin="VCC@1"/>
 <wire x1="5.08" y1="60.96" x2="2.54" y2="60.96" width="0.1524" layer="91"/>
 <junction x="2.54" y="60.96"/>
 <wire x1="-2.54" y1="58.42" x2="2.54" y2="58.42" width="0.1524" layer="91"/>
@@ -8522,12 +8704,12 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 </segment>
 <segment>
 <pinref part="U$3" gate="G$1" pin="VDD"/>
-<wire x1="299.72" y1="63.5" x2="302.26" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="38.1" y1="-5.08" x2="40.64" y2="-5.08" width="0.1524" layer="91"/>
 <pinref part="SUPPLY4" gate="G$1" pin="3.3V"/>
-<wire x1="302.26" y1="66.04" x2="302.26" y2="63.5" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="-2.54" x2="40.64" y2="-5.08" width="0.1524" layer="91"/>
 <pinref part="C4" gate="G$1" pin="1"/>
-<wire x1="302.26" y1="60.96" x2="302.26" y2="63.5" width="0.1524" layer="91"/>
-<junction x="302.26" y="63.5"/>
+<wire x1="40.64" y1="-7.62" x2="40.64" y2="-5.08" width="0.1524" layer="91"/>
+<junction x="40.64" y="-5.08"/>
 </segment>
 <segment>
 <pinref part="IC1" gate="P" pin="V+"/>
@@ -8570,6 +8752,22 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <pinref part="R21" gate="G$1" pin="1"/>
 <pinref part="SUPPLY10" gate="G$1" pin="3.3V"/>
 <wire x1="139.7" y1="101.6" x2="139.7" y2="99.06" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="LDO" gate="G$1" pin="OUT"/>
+<wire x1="307.34" y1="104.14" x2="309.88" y2="104.14" width="0.1524" layer="91"/>
+<pinref part="SUPPLY14" gate="G$1" pin="3.3V"/>
+<wire x1="309.88" y1="104.14" x2="314.96" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="314.96" y1="106.68" x2="314.96" y2="104.14" width="0.1524" layer="91"/>
+<pinref part="C24" gate="G$1" pin="1"/>
+<wire x1="309.88" y1="101.6" x2="309.88" y2="104.14" width="0.1524" layer="91"/>
+<junction x="309.88" y="104.14"/>
+</segment>
+<segment>
+<pinref part="PROGRAM/BOOTLOAD" gate="G$1" pin="8"/>
+<pinref part="SUPPLY12" gate="G$1" pin="3.3V"/>
+<wire x1="-30.48" y1="5.08" x2="-10.16" y2="5.08" width="0.1524" layer="91"/>
+<wire x1="-10.16" y1="5.08" x2="-10.16" y2="7.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$10" class="0">
@@ -8616,13 +8814,6 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <junction x="137.16" y="-33.02"/>
 </segment>
 </net>
-<net name="SP1" class="0">
-<segment>
-<label x="119.38" y="-33.02" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="R7" gate="G$1" pin="2"/>
-<wire x1="119.38" y1="-33.02" x2="124.46" y2="-33.02" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$16" class="0">
 <segment>
 <pinref part="R13" gate="G$1" pin="1"/>
@@ -8667,17 +8858,10 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <junction x="137.16" y="-63.5"/>
 </segment>
 </net>
-<net name="SP2" class="0">
-<segment>
-<label x="119.38" y="-63.5" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="R12" gate="G$1" pin="2"/>
-<wire x1="119.38" y1="-63.5" x2="124.46" y2="-63.5" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="N$20" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="PB6(XTAL1/TOSC1)"/>
-<pinref part="U$2" gate="G$1" pin="2"/>
+<pinref part="ARDUINO" gate="G$1" pin="PB6(XTAL1/TOSC1)"/>
+<pinref part="XTAL" gate="G$1" pin="2"/>
 <wire x1="5.08" y1="43.18" x2="-5.08" y2="43.18" width="0.1524" layer="91"/>
 <pinref part="C14" gate="G$1" pin="2"/>
 <wire x1="-5.08" y1="43.18" x2="-7.62" y2="43.18" width="0.1524" layer="91"/>
@@ -8689,35 +8873,29 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 </net>
 <net name="N$21" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="PB7(XTAL2/TOSC2)"/>
-<pinref part="U$2" gate="G$1" pin="1"/>
+<pinref part="ARDUINO" gate="G$1" pin="PB7(XTAL2/TOSC2)"/>
+<pinref part="XTAL" gate="G$1" pin="1"/>
 <wire x1="5.08" y1="38.1" x2="-5.08" y2="38.1" width="0.1524" layer="91"/>
 <pinref part="C15" gate="G$1" pin="2"/>
 <wire x1="-5.08" y1="38.1" x2="-7.62" y2="38.1" width="0.1524" layer="91"/>
-<wire x1="-12.7" y1="33.02" x2="-12.7" y2="35.56" width="0.1524" layer="91"/>
-<wire x1="-12.7" y1="35.56" x2="-5.08" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="-5.08" y1="35.56" x2="-5.08" y2="38.1" width="0.1524" layer="91"/>
 <junction x="-5.08" y="38.1"/>
 </segment>
 </net>
-<net name="N$22" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="AREF"/>
-<pinref part="C16" gate="G$1" pin="2"/>
-<wire x1="5.08" y1="53.34" x2="-33.02" y2="53.34" width="0.1524" layer="91"/>
-<wire x1="-33.02" y1="53.34" x2="-33.02" y2="50.8" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="RESET" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="PC6(/RESET)"/>
+<pinref part="ARDUINO" gate="G$1" pin="PC6(/RESET)"/>
 <wire x1="5.08" y1="68.58" x2="0" y2="68.58" width="0.1524" layer="91"/>
 <pinref part="R16" gate="G$1" pin="1"/>
 <wire x1="0" y1="68.58" x2="-7.62" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="0" y1="71.12" x2="0" y2="68.58" width="0.1524" layer="91"/>
 <junction x="0" y="68.58"/>
 <pinref part="C17" gate="G$1" pin="1"/>
-<label x="-2.54" y="71.12" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="PROGRAM/BOOTLOAD" gate="G$1" pin="4"/>
+<wire x1="-30.48" y1="-5.08" x2="-27.94" y2="-5.08" width="0.1524" layer="91"/>
+<label x="-27.94" y="-5.08" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="DTR" class="0">
@@ -8725,6 +8903,11 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <pinref part="C17" gate="G$1" pin="2"/>
 <wire x1="-15.24" y1="68.58" x2="-22.86" y2="68.58" width="0.1524" layer="91"/>
 <label x="-22.86" y="68.58" size="1.778" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="PROGRAM/BOOTLOAD" gate="G$1" pin="5"/>
+<wire x1="-30.48" y1="-2.54" x2="-27.94" y2="-2.54" width="0.1524" layer="91"/>
+<label x="-27.94" y="-2.54" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$7" class="0">
@@ -8827,135 +9010,60 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <junction x="330.2" y="-60.96"/>
 </segment>
 </net>
-<net name="CE" class="0">
+<net name="D7-CE" class="0">
 <segment>
 <pinref part="U$3" gate="G$1" pin="CE"/>
-<wire x1="274.32" y1="63.5" x2="271.78" y2="63.5" width="0.1524" layer="91"/>
-<label x="271.78" y="63.5" size="1.27" layer="95" rot="R180" xref="yes"/>
+<wire x1="12.7" y1="-5.08" x2="10.16" y2="-5.08" width="0.1524" layer="91"/>
+<label x="10.16" y="-5.08" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
-</net>
-<net name="CSN" class="0">
 <segment>
-<pinref part="U$3" gate="G$1" pin="CSN"/>
-<wire x1="274.32" y1="60.96" x2="271.78" y2="60.96" width="0.1524" layer="91"/>
-<label x="271.78" y="60.96" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="SCK" class="0">
-<segment>
-<pinref part="U$3" gate="G$1" pin="SCK"/>
-<wire x1="274.32" y1="58.42" x2="271.78" y2="58.42" width="0.1524" layer="91"/>
-<label x="271.78" y="58.42" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="MOSI" class="0">
-<segment>
-<pinref part="U$3" gate="G$1" pin="MOSI"/>
-<wire x1="274.32" y1="55.88" x2="271.78" y2="55.88" width="0.1524" layer="91"/>
-<label x="271.78" y="55.88" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="MISO" class="0">
-<segment>
-<pinref part="U$3" gate="G$1" pin="MISO"/>
-<wire x1="274.32" y1="53.34" x2="271.78" y2="53.34" width="0.1524" layer="91"/>
-<label x="271.78" y="53.34" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="IRQ" class="0">
-<segment>
-<pinref part="U$3" gate="G$1" pin="IRQ"/>
-<wire x1="274.32" y1="50.8" x2="271.78" y2="50.8" width="0.1524" layer="91"/>
-<label x="271.78" y="50.8" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="N$37" class="0">
-<segment>
-<pinref part="JP1" gate="G$1" pin="10"/>
-<wire x1="-17.78" y1="15.24" x2="-15.24" y2="15.24" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$38" class="0">
-<segment>
-<pinref part="JP1" gate="G$1" pin="9"/>
-<wire x1="-17.78" y1="12.7" x2="-15.24" y2="12.7" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$39" class="0">
-<segment>
-<pinref part="JP1" gate="G$1" pin="8"/>
-<wire x1="-17.78" y1="10.16" x2="-15.24" y2="10.16" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$40" class="0">
-<segment>
-<pinref part="JP1" gate="G$1" pin="7"/>
-<wire x1="-17.78" y1="7.62" x2="-15.24" y2="7.62" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$41" class="0">
-<segment>
-<pinref part="JP1" gate="G$1" pin="6"/>
-<wire x1="-17.78" y1="5.08" x2="-15.24" y2="5.08" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$42" class="0">
-<segment>
-<pinref part="JP1" gate="G$1" pin="5"/>
-<wire x1="-17.78" y1="2.54" x2="-15.24" y2="2.54" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$43" class="0">
-<segment>
-<pinref part="JP1" gate="G$1" pin="4"/>
-<wire x1="-17.78" y1="0" x2="-15.24" y2="0" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$44" class="0">
-<segment>
-<pinref part="JP1" gate="G$1" pin="3"/>
-<wire x1="-17.78" y1="-2.54" x2="-15.24" y2="-2.54" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$45" class="0">
-<segment>
-<pinref part="JP1" gate="G$1" pin="2"/>
-<wire x1="-17.78" y1="-5.08" x2="-15.24" y2="-5.08" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$46" class="0">
-<segment>
-<pinref part="JP1" gate="G$1" pin="1"/>
-<wire x1="-17.78" y1="-7.62" x2="-15.24" y2="-7.62" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="D9" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PB1(OC1A)"/>
-<wire x1="53.34" y1="20.32" x2="55.88" y2="20.32" width="0.1524" layer="91"/>
-<label x="55.88" y="20.32" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="D8" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PB0(ICP)"/>
-<wire x1="53.34" y1="22.86" x2="55.88" y2="22.86" width="0.1524" layer="91"/>
-<label x="55.88" y="22.86" size="1.27" layer="95" xref="yes"/>
-</segment>
-</net>
-<net name="D7" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PD7(AIN1)"/>
+<pinref part="ARDUINO" gate="G$1" pin="PD7(AIN1)"/>
 <wire x1="53.34" y1="27.94" x2="55.88" y2="27.94" width="0.1524" layer="91"/>
 <label x="55.88" y="27.94" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
+<net name="D8-CSN" class="0">
+<segment>
+<pinref part="U$3" gate="G$1" pin="CSN"/>
+<wire x1="12.7" y1="-7.62" x2="10.16" y2="-7.62" width="0.1524" layer="91"/>
+<label x="10.16" y="-7.62" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="ARDUINO" gate="G$1" pin="PB0(ICP)"/>
+<wire x1="53.34" y1="22.86" x2="55.88" y2="22.86" width="0.1524" layer="91"/>
+<label x="55.88" y="22.86" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="D2-IRQ" class="0">
+<segment>
+<pinref part="U$3" gate="G$1" pin="IRQ"/>
+<wire x1="12.7" y1="-17.78" x2="10.16" y2="-17.78" width="0.1524" layer="91"/>
+<label x="10.16" y="-17.78" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="ARDUINO" gate="G$1" pin="PD2(INT0)"/>
+<wire x1="53.34" y1="40.64" x2="55.88" y2="40.64" width="0.1524" layer="91"/>
+<label x="55.88" y="40.64" size="1.27" layer="95" xref="yes"/>
+</segment>
+</net>
+<net name="D9-SPEAK1" class="0">
+<segment>
+<pinref part="ARDUINO" gate="G$1" pin="PB1(OC1A)"/>
+<wire x1="53.34" y1="20.32" x2="55.88" y2="20.32" width="0.1524" layer="91"/>
+<label x="55.88" y="20.32" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<label x="119.38" y="-33.02" size="1.27" layer="95" rot="R180" xref="yes"/>
+<pinref part="R7" gate="G$1" pin="2"/>
+<wire x1="119.38" y1="-33.02" x2="124.46" y2="-33.02" width="0.1524" layer="91"/>
+</segment>
+</net>
 <net name="D6" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="PD6(AIN0)"/>
+<pinref part="ARDUINO" gate="G$1" pin="PD6(AIN0)"/>
 <pinref part="IC3" gate="G$1" pin="+IN"/>
 <wire x1="101.6" y1="30.48" x2="96.52" y2="30.48" width="0.1524" layer="91"/>
-<pinref part="D2" gate="G$1" pin="A"/>
+<pinref part="R20" gate="G$1" pin="2"/>
 <wire x1="96.52" y1="30.48" x2="53.34" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="96.52" y1="27.94" x2="96.52" y2="30.48" width="0.1524" layer="91"/>
 <junction x="96.52" y="30.48"/>
@@ -8963,52 +9071,60 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 </net>
 <net name="D5" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="PD5(T1)"/>
+<pinref part="ARDUINO" gate="G$1" pin="PD5(T1)"/>
 <wire x1="53.34" y1="33.02" x2="55.88" y2="33.02" width="0.1524" layer="91"/>
 <label x="55.88" y="33.02" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="D4" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="PD4(XCK/T0)"/>
+<pinref part="ARDUINO" gate="G$1" pin="PD4(XCK/T0)"/>
 <wire x1="53.34" y1="35.56" x2="55.88" y2="35.56" width="0.1524" layer="91"/>
 <label x="55.88" y="35.56" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="D3" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="PD3(INT1)"/>
+<pinref part="ARDUINO" gate="G$1" pin="PD3(INT1)"/>
 <pinref part="IC3" gate="G$1" pin="-IN"/>
 <wire x1="101.6" y1="35.56" x2="99.06" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="99.06" y1="35.56" x2="99.06" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="99.06" y1="38.1" x2="99.06" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="99.06" y1="45.72" x2="119.38" y2="45.72" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="45.72" x2="119.38" y2="33.02" width="0.1524" layer="91"/>
+<wire x1="119.38" y1="45.72" x2="119.38" y2="40.64" width="0.1524" layer="91"/>
 <pinref part="IC3" gate="G$1" pin="OUT"/>
+<wire x1="119.38" y1="40.64" x2="119.38" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="119.38" y1="33.02" x2="116.84" y2="33.02" width="0.1524" layer="91"/>
 <wire x1="53.34" y1="38.1" x2="99.06" y2="38.1" width="0.1524" layer="91"/>
 <junction x="99.06" y="38.1"/>
-</segment>
-</net>
-<net name="D2" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="PD2(INT0)"/>
-<wire x1="53.34" y1="40.64" x2="55.88" y2="40.64" width="0.1524" layer="91"/>
-<label x="55.88" y="40.64" size="1.27" layer="95" xref="yes"/>
+<pinref part="U$2" gate="G$1" pin="+"/>
+<wire x1="129.54" y1="35.56" x2="129.54" y2="40.64" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="40.64" x2="119.38" y2="40.64" width="0.1524" layer="91"/>
+<junction x="119.38" y="40.64"/>
 </segment>
 </net>
 <net name="TXO" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="PD1(TXD)"/>
+<pinref part="ARDUINO" gate="G$1" pin="PD1(TXD)"/>
 <wire x1="53.34" y1="43.18" x2="55.88" y2="43.18" width="0.1524" layer="91"/>
 <label x="55.88" y="43.18" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="PROGRAM/BOOTLOAD" gate="G$1" pin="6"/>
+<wire x1="-30.48" y1="0" x2="-27.94" y2="0" width="0.1524" layer="91"/>
+<label x="-27.94" y="0" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="RXI" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="PD0(RXD)"/>
+<pinref part="ARDUINO" gate="G$1" pin="PD0(RXD)"/>
 <wire x1="53.34" y1="45.72" x2="55.88" y2="45.72" width="0.1524" layer="91"/>
 <label x="55.88" y="45.72" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="PROGRAM/BOOTLOAD" gate="G$1" pin="7"/>
+<wire x1="-30.48" y1="2.54" x2="-27.94" y2="2.54" width="0.1524" layer="91"/>
+<label x="-27.94" y="2.54" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="A0-MIC" class="0">
@@ -9021,32 +9137,45 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <pinref part="R2" gate="G$1" pin="1"/>
 <wire x1="45.72" y1="109.22" x2="45.72" y2="106.68" width="0.1524" layer="91"/>
 <junction x="45.72" y="106.68"/>
-<pinref part="U1" gate="G$1" pin="PC0(ADC0)"/>
+<pinref part="ARDUINO" gate="G$1" pin="PC0(ADC0)"/>
 <wire x1="53.34" y1="68.58" x2="55.88" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="45.72" y1="106.68" x2="55.88" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="55.88" y1="106.68" x2="55.88" y2="68.58" width="0.1524" layer="91"/>
 <label x="55.88" y="68.58" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
-<net name="N$6" class="0">
-<segment>
-<pinref part="D2" gate="G$1" pin="C"/>
-<pinref part="R20" gate="G$1" pin="2"/>
-<wire x1="96.52" y1="20.32" x2="96.52" y2="17.78" width="0.1524" layer="91"/>
-</segment>
-</net>
 <net name="D11-MOSI" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="PB3(MOSI/OC2)"/>
+<pinref part="ARDUINO" gate="G$1" pin="PB3(MOSI/OC2)"/>
 <wire x1="53.34" y1="15.24" x2="55.88" y2="15.24" width="0.1524" layer="91"/>
 <label x="55.88" y="15.24" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="PROGRAM/BOOTLOAD" gate="G$1" pin="3"/>
+<wire x1="-30.48" y1="-7.62" x2="-27.94" y2="-7.62" width="0.1524" layer="91"/>
+<label x="-27.94" y="-7.62" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="MOSI"/>
+<wire x1="12.7" y1="-12.7" x2="10.16" y2="-12.7" width="0.1524" layer="91"/>
+<label x="10.16" y="-12.7" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="D12-MISO" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="PB4(MISO)"/>
+<pinref part="ARDUINO" gate="G$1" pin="PB4(MISO)"/>
 <wire x1="53.34" y1="12.7" x2="55.88" y2="12.7" width="0.1524" layer="91"/>
 <label x="55.88" y="12.7" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="PROGRAM/BOOTLOAD" gate="G$1" pin="2"/>
+<wire x1="-30.48" y1="-10.16" x2="-27.94" y2="-10.16" width="0.1524" layer="91"/>
+<label x="-27.94" y="-10.16" size="1.27" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="U$3" gate="G$1" pin="MISO"/>
+<wire x1="12.7" y1="-15.24" x2="10.16" y2="-15.24" width="0.1524" layer="91"/>
+<label x="10.16" y="-15.24" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="N$2" class="0">
@@ -9077,7 +9206,7 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 </net>
 <net name="TALK/CALL" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="PC1(ADC1)"/>
+<pinref part="ARDUINO" gate="G$1" pin="PC1(ADC1)"/>
 <wire x1="53.34" y1="66.04" x2="76.2" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="66.04" x2="76.2" y2="78.74" width="0.1524" layer="91"/>
 <pinref part="TALK" gate="S" pin="4"/>
@@ -9127,6 +9256,33 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <segment>
 <pinref part="U$1" gate="G$1" pin="EARTH-GND/MIC"/>
 <wire x1="276.86" y1="-43.18" x2="274.32" y2="-43.18" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="V_BATT" class="0">
+<segment>
+<pinref part="U$4" gate="G$2" pin="TP"/>
+<wire x1="254" y1="93.98" x2="254" y2="104.14" width="0.1524" layer="91"/>
+<pinref part="SUPPLY13" gate="G$1" pin="V_BATT"/>
+<pinref part="LDO" gate="G$1" pin="IN"/>
+<wire x1="254" y1="104.14" x2="254" y2="109.22" width="0.1524" layer="91"/>
+<wire x1="289.56" y1="104.14" x2="287.02" y2="104.14" width="0.1524" layer="91"/>
+<pinref part="C23" gate="G$1" pin="1"/>
+<wire x1="287.02" y1="104.14" x2="276.86" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="276.86" y1="101.6" x2="276.86" y2="104.14" width="0.1524" layer="91"/>
+<junction x="276.86" y="104.14"/>
+<pinref part="LDO" gate="G$1" pin="EN"/>
+<wire x1="289.56" y1="93.98" x2="287.02" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="287.02" y1="93.98" x2="287.02" y2="104.14" width="0.1524" layer="91"/>
+<junction x="287.02" y="104.14"/>
+<wire x1="276.86" y1="104.14" x2="254" y2="104.14" width="0.1524" layer="91"/>
+<junction x="254" y="104.14"/>
+</segment>
+</net>
+<net name="N$6" class="0">
+<segment>
+<pinref part="D2" gate="G$1" pin="A"/>
+<pinref part="R20" gate="G$1" pin="1"/>
+<wire x1="96.52" y1="17.78" x2="96.52" y2="15.24" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
