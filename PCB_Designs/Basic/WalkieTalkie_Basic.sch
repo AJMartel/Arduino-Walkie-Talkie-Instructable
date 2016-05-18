@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.3.0">
+<eagle version="7.4.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -6618,10 +6618,11 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <circle x="0" y="0" radius="1.27" width="0.2032" layer="21"/>
 <smd name="1" x="-2.794" y="1.905" dx="0.762" dy="1.524" layer="1" rot="R90"/>
 <smd name="2" x="2.794" y="1.905" dx="0.762" dy="1.524" layer="1" rot="R90"/>
-<smd name="3" x="-2.794" y="-1.905" dx="0.762" dy="1.524" layer="1" rot="R90"/>
-<smd name="4" x="2.794" y="-1.905" dx="0.762" dy="1.524" layer="1" rot="R90"/>
+<smd name="3" x="-2.794" y="-2.605" dx="0.762" dy="1.524" layer="1" rot="R90"/>
+<smd name="4" x="2.794" y="-2.605" dx="0.762" dy="1.524" layer="1" rot="R90"/>
 <text x="-0.889" y="1.778" size="0.4064" layer="25">&gt;NAME</text>
 <text x="-0.889" y="-2.032" size="0.4064" layer="27">&gt;Value</text>
+<text x="-4.4" y="-1" size="0.5" layer="27">moved bottom 2 pads .7 mm down</text>
 </package>
 </packages>
 <symbols>
@@ -8289,6 +8290,7 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/21314g.pdf</description>
 <part name="MIC" library="Orlando" deviceset="MIC_CMC-5042PF-AC" device=""/>
 <part name="C4" library="resistor" deviceset="C-EU" device="C0402" value="100n"/>
 <part name="GND16" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
+<part name="S1" library="SparkFun-Retired" deviceset="TAC_SWITCH" device="SMD" value="TAC_SWITCHSMD"/>
 </parts>
 <sheets>
 <sheet>
@@ -8314,11 +8316,11 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <instance part="R3" gate="G$1" x="17.78" y="99.06" rot="R90"/>
 <instance part="C1" gate="G$1" x="25.4" y="91.44" rot="R90"/>
 <instance part="GND2" gate="1" x="45.72" y="78.74"/>
-<instance part="TALK" gate="S" x="88.9" y="81.28" rot="MR0"/>
-<instance part="R4" gate="G$1" x="96.52" y="91.44" rot="MR270"/>
-<instance part="GND1" gate="1" x="99.06" y="66.04" rot="MR0"/>
-<instance part="C2" gate="G$1" x="104.14" y="76.2" rot="MR180"/>
-<instance part="SUPPLY1" gate="G$1" x="96.52" y="99.06" rot="MR0"/>
+<instance part="TALK" gate="S" x="88.9" y="88.9" rot="MR0"/>
+<instance part="R4" gate="G$1" x="96.52" y="99.06" rot="MR270"/>
+<instance part="GND1" gate="1" x="81.28" y="76.2" rot="MR0"/>
+<instance part="C2" gate="G$1" x="93.98" y="81.28" rot="MR270"/>
+<instance part="SUPPLY1" gate="G$1" x="96.52" y="106.68" rot="MR0"/>
 <instance part="SUPPLY2" gate="G$1" x="17.78" y="106.68"/>
 <instance part="SUPPLY3" gate="G$1" x="45.72" y="124.46"/>
 <instance part="XTAL" gate="G$1" x="-7.62" y="40.64" rot="R90"/>
@@ -8397,21 +8399,21 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <instance part="GND24" gate="1" x="127" y="45.72"/>
 <instance part="CALL" gate="S" x="132.08" y="83.82" rot="MR0"/>
 <instance part="R21" gate="G$1" x="139.7" y="93.98" rot="MR270"/>
-<instance part="GND22" gate="1" x="142.24" y="68.58" rot="MR0"/>
-<instance part="C21" gate="G$1" x="147.32" y="78.74" rot="MR180"/>
+<instance part="GND22" gate="1" x="124.46" y="71.12" rot="MR0"/>
+<instance part="C21" gate="G$1" x="137.16" y="76.2" rot="MR270"/>
 <instance part="SUPPLY10" gate="G$1" x="139.7" y="101.6" rot="MR0"/>
 <instance part="U$1" gate="G$1" x="281.94" y="-48.26" rot="MR0"/>
-<instance part="LDO" gate="G$1" x="299.72" y="99.06"/>
-<instance part="GND25" gate="1" x="284.48" y="86.36"/>
-<instance part="LIPO" gate="G$2" x="254" y="91.44"/>
-<instance part="LIPO" gate="G$1" x="261.62" y="91.44"/>
-<instance part="GND26" gate="1" x="266.7" y="91.44"/>
-<instance part="SUPPLY13" gate="G$1" x="254" y="109.22"/>
-<instance part="C23" gate="G$1" x="276.86" y="99.06" rot="MR0"/>
-<instance part="GND27" gate="1" x="276.86" y="86.36"/>
-<instance part="SUPPLY14" gate="G$1" x="314.96" y="106.68"/>
-<instance part="C24" gate="G$1" x="309.88" y="99.06"/>
-<instance part="GND28" gate="1" x="309.88" y="86.36"/>
+<instance part="LDO" gate="G$1" x="228.6" y="71.12"/>
+<instance part="GND25" gate="1" x="213.36" y="58.42"/>
+<instance part="LIPO" gate="G$2" x="182.88" y="63.5"/>
+<instance part="LIPO" gate="G$1" x="190.5" y="63.5"/>
+<instance part="GND26" gate="1" x="195.58" y="63.5"/>
+<instance part="SUPPLY13" gate="G$1" x="182.88" y="81.28"/>
+<instance part="C23" gate="G$1" x="205.74" y="71.12" rot="MR0"/>
+<instance part="GND27" gate="1" x="205.74" y="58.42"/>
+<instance part="SUPPLY14" gate="G$1" x="243.84" y="78.74"/>
+<instance part="C24" gate="G$1" x="238.76" y="71.12"/>
+<instance part="GND28" gate="1" x="238.76" y="58.42"/>
 <instance part="SUPPLY12" gate="G$1" x="-10.16" y="7.62"/>
 <instance part="GND29" gate="1" x="-15.24" y="0"/>
 <instance part="U$2" gate="G$1" x="134.62" y="27.94"/>
@@ -8419,6 +8421,7 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <instance part="MIC" gate="G$1" x="12.7" y="88.9"/>
 <instance part="C4" gate="G$1" x="-10.16" y="58.42" rot="R270"/>
 <instance part="GND16" gate="1" x="-20.32" y="53.34"/>
+<instance part="S1" gate="S" x="116.84" y="106.68"/>
 </instances>
 <busses>
 </busses>
@@ -8600,49 +8603,27 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <wire x1="127" y1="48.26" x2="127" y2="50.8" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="TALK" gate="S" pin="2"/>
-<pinref part="GND1" gate="1" pin="GND"/>
-<wire x1="93.98" y1="78.74" x2="99.06" y2="78.74" width="0.1524" layer="91"/>
-<wire x1="99.06" y1="78.74" x2="99.06" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="C2" gate="G$1" pin="1"/>
-<wire x1="99.06" y1="71.12" x2="99.06" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="104.14" y1="73.66" x2="104.14" y2="71.12" width="0.1524" layer="91"/>
-<wire x1="104.14" y1="71.12" x2="99.06" y2="71.12" width="0.1524" layer="91"/>
-<junction x="99.06" y="71.12"/>
-</segment>
-<segment>
-<pinref part="CALL" gate="S" pin="2"/>
-<pinref part="GND22" gate="1" pin="GND"/>
-<wire x1="137.16" y1="81.28" x2="142.24" y2="81.28" width="0.1524" layer="91"/>
-<wire x1="142.24" y1="81.28" x2="142.24" y2="73.66" width="0.1524" layer="91"/>
-<pinref part="C21" gate="G$1" pin="1"/>
-<wire x1="142.24" y1="73.66" x2="142.24" y2="71.12" width="0.1524" layer="91"/>
-<wire x1="147.32" y1="76.2" x2="147.32" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="147.32" y1="73.66" x2="142.24" y2="73.66" width="0.1524" layer="91"/>
-<junction x="142.24" y="73.66"/>
-</segment>
-<segment>
 <pinref part="LDO" gate="G$1" pin="GND"/>
-<wire x1="289.56" y1="99.06" x2="284.48" y2="99.06" width="0.1524" layer="91"/>
-<wire x1="284.48" y1="99.06" x2="284.48" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="218.44" y1="71.12" x2="213.36" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="213.36" y1="71.12" x2="213.36" y2="60.96" width="0.1524" layer="91"/>
 <pinref part="GND25" gate="1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="LIPO" gate="G$1" pin="TP"/>
-<wire x1="261.62" y1="93.98" x2="261.62" y2="96.52" width="0.1524" layer="91"/>
-<wire x1="261.62" y1="96.52" x2="266.7" y2="96.52" width="0.1524" layer="91"/>
-<wire x1="266.7" y1="96.52" x2="266.7" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="190.5" y1="66.04" x2="190.5" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="190.5" y1="68.58" x2="195.58" y2="68.58" width="0.1524" layer="91"/>
+<wire x1="195.58" y1="68.58" x2="195.58" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="GND26" gate="1" pin="GND"/>
 </segment>
 <segment>
 <pinref part="C23" gate="G$1" pin="2"/>
 <pinref part="GND27" gate="1" pin="GND"/>
-<wire x1="276.86" y1="88.9" x2="276.86" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="205.74" y1="60.96" x2="205.74" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C24" gate="G$1" pin="2"/>
 <pinref part="GND28" gate="1" pin="GND"/>
-<wire x1="309.88" y1="88.9" x2="309.88" y2="93.98" width="0.1524" layer="91"/>
+<wire x1="238.76" y1="60.96" x2="238.76" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="PROGRAM/BOOTLOAD" gate="G$1" pin="9"/>
@@ -8670,6 +8651,26 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <wire x1="-15.24" y1="58.42" x2="-20.32" y2="58.42" width="0.1524" layer="91"/>
 <wire x1="-20.32" y1="58.42" x2="-20.32" y2="55.88" width="0.1524" layer="91"/>
 <pinref part="GND16" gate="1" pin="GND"/>
+</segment>
+<segment>
+<pinref part="TALK" gate="S" pin="4"/>
+<pinref part="GND1" gate="1" pin="GND"/>
+<wire x1="83.82" y1="86.36" x2="81.28" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="81.28" y1="86.36" x2="81.28" y2="81.28" width="0.1524" layer="91"/>
+<pinref part="C2" gate="G$1" pin="1"/>
+<wire x1="81.28" y1="81.28" x2="81.28" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="91.44" y1="81.28" x2="81.28" y2="81.28" width="0.1524" layer="91"/>
+<junction x="81.28" y="81.28"/>
+</segment>
+<segment>
+<pinref part="CALL" gate="S" pin="4"/>
+<pinref part="GND22" gate="1" pin="GND"/>
+<wire x1="127" y1="81.28" x2="124.46" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="124.46" y1="81.28" x2="124.46" y2="76.2" width="0.1524" layer="91"/>
+<pinref part="C21" gate="G$1" pin="1"/>
+<wire x1="124.46" y1="76.2" x2="124.46" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="134.62" y1="76.2" x2="124.46" y2="76.2" width="0.1524" layer="91"/>
+<junction x="124.46" y="76.2"/>
 </segment>
 </net>
 <net name="3.3V" class="0">
@@ -8752,7 +8753,7 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <segment>
 <pinref part="R4" gate="G$1" pin="1"/>
 <pinref part="SUPPLY1" gate="G$1" pin="3.3V"/>
-<wire x1="96.52" y1="99.06" x2="96.52" y2="96.52" width="0.1524" layer="91"/>
+<wire x1="96.52" y1="106.68" x2="96.52" y2="104.14" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="R21" gate="G$1" pin="1"/>
@@ -8761,13 +8762,13 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 </segment>
 <segment>
 <pinref part="LDO" gate="G$1" pin="OUT"/>
-<wire x1="307.34" y1="104.14" x2="309.88" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="236.22" y1="76.2" x2="238.76" y2="76.2" width="0.1524" layer="91"/>
 <pinref part="SUPPLY14" gate="G$1" pin="3.3V"/>
-<wire x1="309.88" y1="104.14" x2="314.96" y2="104.14" width="0.1524" layer="91"/>
-<wire x1="314.96" y1="106.68" x2="314.96" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="238.76" y1="76.2" x2="243.84" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="243.84" y1="78.74" x2="243.84" y2="76.2" width="0.1524" layer="91"/>
 <pinref part="C24" gate="G$1" pin="1"/>
-<wire x1="309.88" y1="101.6" x2="309.88" y2="104.14" width="0.1524" layer="91"/>
-<junction x="309.88" y="104.14"/>
+<wire x1="238.76" y1="73.66" x2="238.76" y2="76.2" width="0.1524" layer="91"/>
+<junction x="238.76" y="76.2"/>
 </segment>
 <segment>
 <pinref part="PROGRAM/BOOTLOAD" gate="G$1" pin="8"/>
@@ -9184,46 +9185,40 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <label x="10.16" y="-15.24" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="N$2" class="0">
-<segment>
-<pinref part="TALK" gate="S" pin="1"/>
-<pinref part="R4" gate="G$1" pin="2"/>
-<wire x1="93.98" y1="81.28" x2="96.52" y2="81.28" width="0.1524" layer="91"/>
-<wire x1="96.52" y1="81.28" x2="96.52" y2="83.82" width="0.1524" layer="91"/>
-<pinref part="C2" gate="G$1" pin="2"/>
-<wire x1="96.52" y1="83.82" x2="96.52" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="104.14" y1="81.28" x2="104.14" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="104.14" y1="83.82" x2="96.52" y2="83.82" width="0.1524" layer="91"/>
-<junction x="96.52" y="83.82"/>
-</segment>
-</net>
-<net name="N$1" class="0">
-<segment>
-<pinref part="CALL" gate="S" pin="1"/>
-<pinref part="R21" gate="G$1" pin="2"/>
-<wire x1="137.16" y1="83.82" x2="139.7" y2="83.82" width="0.1524" layer="91"/>
-<wire x1="139.7" y1="83.82" x2="139.7" y2="86.36" width="0.1524" layer="91"/>
-<pinref part="C21" gate="G$1" pin="2"/>
-<wire x1="139.7" y1="86.36" x2="139.7" y2="88.9" width="0.1524" layer="91"/>
-<wire x1="147.32" y1="83.82" x2="147.32" y2="86.36" width="0.1524" layer="91"/>
-<wire x1="147.32" y1="86.36" x2="139.7" y2="86.36" width="0.1524" layer="91"/>
-<junction x="139.7" y="86.36"/>
-</segment>
-</net>
 <net name="TALK/CALL" class="0">
 <segment>
 <pinref part="ARDUINO" gate="G$1" pin="PC1(ADC1)"/>
 <wire x1="53.34" y1="66.04" x2="76.2" y2="66.04" width="0.1524" layer="91"/>
-<wire x1="76.2" y1="66.04" x2="76.2" y2="78.74" width="0.1524" layer="91"/>
-<pinref part="TALK" gate="S" pin="4"/>
-<wire x1="76.2" y1="78.74" x2="83.82" y2="78.74" width="0.1524" layer="91"/>
-<pinref part="CALL" gate="S" pin="4"/>
-<wire x1="127" y1="81.28" x2="121.92" y2="81.28" width="0.1524" layer="91"/>
-<wire x1="121.92" y1="81.28" x2="121.92" y2="60.96" width="0.1524" layer="91"/>
-<wire x1="121.92" y1="60.96" x2="76.2" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="157.48" y1="60.96" x2="111.76" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="60.96" x2="76.2" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="60.96" x2="76.2" y2="66.04" width="0.1524" layer="91"/>
-<junction x="76.2" y="66.04"/>
-<label x="76.2" y="66.04" size="1.27" layer="95" xref="yes"/>
+<wire x1="157.48" y1="60.96" x2="157.48" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="CALL" gate="S" pin="1"/>
+<pinref part="R21" gate="G$1" pin="2"/>
+<wire x1="137.16" y1="83.82" x2="139.7" y2="83.82" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="83.82" x2="139.7" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="139.7" y1="86.36" x2="139.7" y2="88.9" width="0.1524" layer="91"/>
+<junction x="139.7" y="86.36"/>
+<wire x1="157.48" y1="86.36" x2="144.78" y2="86.36" width="0.1524" layer="91"/>
+<pinref part="R4" gate="G$1" pin="2"/>
+<wire x1="144.78" y1="86.36" x2="139.7" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="96.52" y1="91.44" x2="96.52" y2="93.98" width="0.1524" layer="91"/>
+<junction x="96.52" y="91.44"/>
+<wire x1="96.52" y1="88.9" x2="96.52" y2="91.44" width="0.1524" layer="91"/>
+<pinref part="TALK" gate="S" pin="1"/>
+<wire x1="93.98" y1="88.9" x2="96.52" y2="88.9" width="0.1524" layer="91"/>
+<wire x1="96.52" y1="91.44" x2="101.6" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="91.44" x2="111.76" y2="91.44" width="0.1524" layer="91"/>
+<wire x1="111.76" y1="91.44" x2="111.76" y2="60.96" width="0.1524" layer="91"/>
+<junction x="111.76" y="60.96"/>
+<pinref part="C2" gate="G$1" pin="2"/>
+<wire x1="99.06" y1="81.28" x2="101.6" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="101.6" y1="81.28" x2="101.6" y2="91.44" width="0.1524" layer="91"/>
+<junction x="101.6" y="91.44"/>
+<pinref part="C21" gate="G$1" pin="2"/>
+<wire x1="142.24" y1="76.2" x2="144.78" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="144.78" y1="76.2" x2="144.78" y2="86.36" width="0.1524" layer="91"/>
+<junction x="144.78" y="86.36"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -9267,21 +9262,21 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <net name="V_BATT" class="0">
 <segment>
 <pinref part="LIPO" gate="G$2" pin="TP"/>
-<wire x1="254" y1="93.98" x2="254" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="182.88" y1="66.04" x2="182.88" y2="76.2" width="0.1524" layer="91"/>
 <pinref part="SUPPLY13" gate="G$1" pin="V_BATT"/>
 <pinref part="LDO" gate="G$1" pin="IN"/>
-<wire x1="254" y1="104.14" x2="254" y2="109.22" width="0.1524" layer="91"/>
-<wire x1="289.56" y1="104.14" x2="287.02" y2="104.14" width="0.1524" layer="91"/>
+<wire x1="182.88" y1="76.2" x2="182.88" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="218.44" y1="76.2" x2="215.9" y2="76.2" width="0.1524" layer="91"/>
 <pinref part="C23" gate="G$1" pin="1"/>
-<wire x1="287.02" y1="104.14" x2="276.86" y2="104.14" width="0.1524" layer="91"/>
-<wire x1="276.86" y1="101.6" x2="276.86" y2="104.14" width="0.1524" layer="91"/>
-<junction x="276.86" y="104.14"/>
+<wire x1="215.9" y1="76.2" x2="205.74" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="205.74" y1="73.66" x2="205.74" y2="76.2" width="0.1524" layer="91"/>
+<junction x="205.74" y="76.2"/>
 <pinref part="LDO" gate="G$1" pin="EN"/>
-<wire x1="289.56" y1="93.98" x2="287.02" y2="93.98" width="0.1524" layer="91"/>
-<wire x1="287.02" y1="93.98" x2="287.02" y2="104.14" width="0.1524" layer="91"/>
-<junction x="287.02" y="104.14"/>
-<wire x1="276.86" y1="104.14" x2="254" y2="104.14" width="0.1524" layer="91"/>
-<junction x="254" y="104.14"/>
+<wire x1="218.44" y1="66.04" x2="215.9" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="215.9" y1="66.04" x2="215.9" y2="76.2" width="0.1524" layer="91"/>
+<junction x="215.9" y="76.2"/>
+<wire x1="205.74" y1="76.2" x2="182.88" y2="76.2" width="0.1524" layer="91"/>
+<junction x="182.88" y="76.2"/>
 </segment>
 </net>
 <net name="N$6" class="0">
@@ -9325,6 +9320,24 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <segment>
 <pinref part="ARDUINO" gate="G$1" pin="ADC7"/>
 <wire x1="53.34" y1="50.8" x2="55.88" y2="50.8" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$1" class="0">
+<segment>
+<pinref part="TALK" gate="S" pin="2"/>
+<wire x1="93.98" y1="86.36" x2="96.52" y2="86.36" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$2" class="0">
+<segment>
+<pinref part="TALK" gate="S" pin="3"/>
+<wire x1="83.82" y1="88.9" x2="81.28" y2="88.9" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$34" class="0">
+<segment>
+<pinref part="CALL" gate="S" pin="3"/>
+<wire x1="127" y1="83.82" x2="124.46" y2="83.82" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
