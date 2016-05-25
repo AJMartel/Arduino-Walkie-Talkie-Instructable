@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.4.0">
+<eagle version="7.3.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -7364,10 +7364,12 @@ Standard 10-pin 0.1" header. Use with straight break away headers (SKU : PRT-001
 <text x="-1.27" y="-1.905" size="0.635" layer="25">&gt;Value</text>
 </package>
 <package name="HOLE">
-<pad name="P$1" x="-1.151" y="0" drill="1.016"/>
-<pad name="P$2" x="1.135" y="0" drill="1.016"/>
+<pad name="P$1" x="-1.151" y="0" drill="1.016" diameter="1.778"/>
+<pad name="P$2" x="1.135" y="0" drill="1.016" diameter="1.778"/>
 <text x="-2.54" y="1.27" size="0.762" layer="25">&gt;NAME</text>
 <text x="-2.54" y="-1.905" size="0.762" layer="27">&gt;VALUE</text>
+<text x="-3.175" y="0" size="1.016" layer="21">+</text>
+<text x="2.54" y="0" size="1.016" layer="21">-</text>
 </package>
 </packages>
 <symbols>
@@ -7431,14 +7433,14 @@ Standard 10-pin 0.1" header. Use with straight break away headers (SKU : PRT-001
 </deviceset>
 <deviceset name="BATT-CONNECT">
 <gates>
-<gate name="G$2" symbol="PS" x="5.08" y="2.54"/>
-<gate name="G$1" symbol="PS" x="-5.08" y="2.54"/>
+<gate name="-" symbol="PS" x="5.08" y="2.54"/>
+<gate name="+" symbol="PS" x="-5.08" y="2.54"/>
 </gates>
 <devices>
 <device name="" package="HOLE">
 <connects>
-<connect gate="G$1" pin="TP" pad="P$1"/>
-<connect gate="G$2" pin="TP" pad="P$2"/>
+<connect gate="+" pin="TP" pad="P$1"/>
+<connect gate="-" pin="TP" pad="P$2"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -7842,7 +7844,9 @@ Source: http://www.analog.com/static/imported-files/data_sheets/AD8603_8607_8609
 <pad name="+" x="-2.5" y="0" drill="0.7"/>
 <pad name="-" x="2.5" y="0" drill="0.7"/>
 <circle x="0" y="0" radius="6.1" width="0.127" layer="21"/>
-<text x="-4.445" y="1.27" size="1.778" layer="21">+</text>
+<text x="-5.334" y="0" size="1.778" layer="21">+</text>
+<text x="-2.54" y="3.81" size="1.27" layer="25">&gt;Name</text>
+<text x="-2.54" y="-3.81" size="1.27" layer="27">&gt;Value</text>
 </package>
 <package name="MIC_01">
 <pad name="+" x="-1" y="0.95" drill="0.5" rot="R270"/>
@@ -7901,6 +7905,8 @@ Source: http://www.analog.com/static/imported-files/data_sheets/AD8603_8607_8609
 <wire x1="3.81" y1="-8.89" x2="3.81" y2="8.89" width="0.254" layer="94"/>
 <pin name="+" x="-5.08" y="7.62" visible="pin" length="point" rot="R180"/>
 <pin name="-" x="-5.08" y="-7.62" visible="pin" length="point" rot="R180"/>
+<text x="-10.16" y="10.16" size="2.032" layer="95">&gt;Name</text>
+<text x="-10.16" y="-12.7" size="2.032" layer="96">&gt;Value</text>
 </symbol>
 <symbol name="MIC">
 <wire x1="0" y1="0" x2="0" y2="-7.62" width="0.254" layer="94" curve="-145"/>
@@ -8291,6 +8297,7 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/21314g.pdf</description>
 <part name="C4" library="resistor" deviceset="C-EU" device="C0402" value="100n"/>
 <part name="GND16" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="S1" library="SparkFun-Retired" deviceset="TAC_SWITCH" device="SMD" value="TAC_SWITCHSMD"/>
+<part name="U$4" library="Orlando" deviceset="PS1240P02CT3" device="P"/>
 </parts>
 <sheets>
 <sheet>
@@ -8405,8 +8412,8 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <instance part="U$1" gate="G$1" x="281.94" y="-48.26" rot="MR0"/>
 <instance part="LDO" gate="G$1" x="228.6" y="71.12"/>
 <instance part="GND25" gate="1" x="213.36" y="58.42"/>
-<instance part="LIPO" gate="G$2" x="182.88" y="63.5"/>
-<instance part="LIPO" gate="G$1" x="190.5" y="63.5"/>
+<instance part="LIPO" gate="-" x="190.5" y="63.5"/>
+<instance part="LIPO" gate="+" x="182.88" y="63.5"/>
 <instance part="GND26" gate="1" x="195.58" y="63.5"/>
 <instance part="SUPPLY13" gate="G$1" x="182.88" y="81.28"/>
 <instance part="C23" gate="G$1" x="205.74" y="71.12" rot="MR0"/>
@@ -8422,6 +8429,7 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <instance part="C4" gate="G$1" x="-10.16" y="58.42" rot="R270"/>
 <instance part="GND16" gate="1" x="-20.32" y="53.34"/>
 <instance part="S1" gate="S" x="116.84" y="106.68"/>
+<instance part="U$4" gate="G$1" x="170.18" y="27.94"/>
 </instances>
 <busses>
 </busses>
@@ -8609,11 +8617,11 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <pinref part="GND25" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="LIPO" gate="G$1" pin="TP"/>
-<wire x1="190.5" y1="66.04" x2="190.5" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="190.5" y1="68.58" x2="195.58" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="195.58" y1="68.58" x2="195.58" y2="66.04" width="0.1524" layer="91"/>
 <pinref part="GND26" gate="1" pin="GND"/>
+<pinref part="LIPO" gate="-" pin="TP"/>
+<wire x1="190.5" y1="66.04" x2="190.5" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="C23" gate="G$1" pin="2"/>
@@ -9261,8 +9269,6 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 </net>
 <net name="V_BATT" class="0">
 <segment>
-<pinref part="LIPO" gate="G$2" pin="TP"/>
-<wire x1="182.88" y1="66.04" x2="182.88" y2="76.2" width="0.1524" layer="91"/>
 <pinref part="SUPPLY13" gate="G$1" pin="V_BATT"/>
 <pinref part="LDO" gate="G$1" pin="IN"/>
 <wire x1="182.88" y1="76.2" x2="182.88" y2="81.28" width="0.1524" layer="91"/>
@@ -9276,6 +9282,8 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <wire x1="215.9" y1="66.04" x2="215.9" y2="76.2" width="0.1524" layer="91"/>
 <junction x="215.9" y="76.2"/>
 <wire x1="205.74" y1="76.2" x2="182.88" y2="76.2" width="0.1524" layer="91"/>
+<pinref part="LIPO" gate="+" pin="TP"/>
+<wire x1="182.88" y1="66.04" x2="182.88" y2="76.2" width="0.1524" layer="91"/>
 <junction x="182.88" y="76.2"/>
 </segment>
 </net>

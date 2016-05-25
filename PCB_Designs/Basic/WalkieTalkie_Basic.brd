@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.4.0">
+<eagle version="7.3.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="mm" unit="mm" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
+<grid distance="2" unitdist="mil" unit="mil" style="lines" multiple="1" display="yes" altdistance="0.025" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="16" name="Bottom" color="1" fill="1" visible="yes" active="yes"/>
@@ -18,9 +18,9 @@
 <layer number="22" name="bPlace" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="23" name="tOrigins" color="15" fill="1" visible="yes" active="yes"/>
 <layer number="24" name="bOrigins" color="15" fill="1" visible="yes" active="yes"/>
-<layer number="25" name="tNames" color="7" fill="1" visible="no" active="yes"/>
-<layer number="26" name="bNames" color="7" fill="1" visible="no" active="yes"/>
-<layer number="27" name="tValues" color="7" fill="1" visible="no" active="yes"/>
+<layer number="25" name="tNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
+<layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="no" active="yes"/>
 <layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
@@ -1453,10 +1453,12 @@ You are welcome to use this library for commercial purposes. For attribution, we
 <text x="-1.27" y="-1.905" size="0.635" layer="25">&gt;Value</text>
 </package>
 <package name="HOLE">
-<pad name="P$1" x="-1.151" y="0" drill="1.016"/>
-<pad name="P$2" x="1.135" y="0" drill="1.016"/>
+<pad name="P$1" x="-1.151" y="0" drill="1.016" diameter="1.778"/>
+<pad name="P$2" x="1.135" y="0" drill="1.016" diameter="1.778"/>
 <text x="-2.54" y="1.27" size="0.762" layer="25">&gt;NAME</text>
 <text x="-2.54" y="-1.905" size="0.762" layer="27">&gt;VALUE</text>
+<text x="-3.175" y="0" size="1.016" layer="21">+</text>
+<text x="2.54" y="0" size="1.016" layer="21">-</text>
 </package>
 </packages>
 </library>
@@ -1589,7 +1591,9 @@ Source: http://www.analog.com/UploadedFiles/Data_Sheets/346131962AD8067_a.pdf</d
 <pad name="+" x="-2.5" y="0" drill="0.7"/>
 <pad name="-" x="2.5" y="0" drill="0.7"/>
 <circle x="0" y="0" radius="6.1" width="0.127" layer="21"/>
-<text x="-4.445" y="1.27" size="1.778" layer="21">+</text>
+<text x="-5.334" y="0" size="1.778" layer="21">+</text>
+<text x="-2.54" y="3.81" size="1.27" layer="25">&gt;Name</text>
+<text x="-2.54" y="-3.81" size="1.27" layer="27">&gt;Value</text>
 </package>
 <package name="MIC_01">
 <pad name="+" x="-1" y="0.95" drill="0.5" rot="R270"/>
@@ -1825,15 +1829,15 @@ design rules under a new name.</description>
 </element>
 <element name="Q1" library="SparkFun-DiscreteSemi" package="SOT23-3" value="MOSFET-NCHANNELBSS123LT1G" x="25.4508" y="19.8628" smashed="yes" rot="MR0">
 <attribute name="PROD_ID" value="TRANS-08345" x="25.4508" y="19.8628" size="1.778" layer="28" rot="MR0" display="off"/>
-<attribute name="NAME" x="26.2763" y="21.6408" size="0.4064" layer="26" rot="MR0"/>
+<attribute name="NAME" x="25.8699" y="19.6596" size="0.5842" layer="26" rot="MR0"/>
 <attribute name="VALUE" x="26.4668" y="19.6723" size="0.4064" layer="28" rot="MR0"/>
 </element>
 <element name="R1" library="resistor" package="R0402" value="900k" x="27.686" y="19.5072" smashed="yes" rot="MR90">
-<attribute name="NAME" x="28.321" y="18.8722" size="1.27" layer="26" rot="MR90"/>
+<attribute name="NAME" x="28.575" y="19.431" size="0.5842" layer="26" rot="MR90"/>
 <attribute name="VALUE" x="25.781" y="18.8722" size="1.27" layer="28" rot="MR90"/>
 </element>
 <element name="R2" library="resistor" package="R0402" value="10k" x="27.686" y="22.098" smashed="yes" rot="MR90">
-<attribute name="NAME" x="28.321" y="21.463" size="1.27" layer="26" rot="MR90"/>
+<attribute name="NAME" x="28.4734" y="21.7678" size="0.5842" layer="26" rot="MR90"/>
 <attribute name="VALUE" x="25.781" y="21.463" size="1.27" layer="28" rot="MR90"/>
 </element>
 <element name="R3" library="resistor" package="R0402" value="10k" x="23.876" y="16.7132" smashed="yes" rot="MR270">
@@ -1846,7 +1850,7 @@ design rules under a new name.</description>
 </element>
 <element name="TALK" library="SparkFun-Retired" package="TACTILE-SWITCH-SMD" value="TAC_SWITCHSMD" x="13.1572" y="21.7932" smashed="yes">
 <attribute name="PROD_ID" value="SWCH-08247" x="13.1572" y="21.7932" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="15.113" y="24.5872" size="0.635" layer="25"/>
+<attribute name="NAME" x="16.1798" y="23.5712" size="0.762" layer="25"/>
 <attribute name="VALUE" x="12.2682" y="19.7612" size="0.4064" layer="27"/>
 </element>
 <element name="ARDUINO" library="SparkFun-DigitalIC" package="TQFP32-08" value="ATMEGA328P" x="15.6972" y="31.0388" smashed="yes" rot="R90">
@@ -1993,7 +1997,7 @@ design rules under a new name.</description>
 </element>
 <element name="D2" library="SparkFun-LED" package="LED-0603" value="RED" x="17.9832" y="15.4432" smashed="yes" rot="R180">
 <attribute name="PROD_ID" value="DIO-00819" x="17.9832" y="15.4432" size="1.778" layer="27" rot="R180" display="off"/>
-<attribute name="NAME" x="18.8849" y="15.1638" size="0.635" layer="25" rot="R270"/>
+<attribute name="NAME" x="18.8849" y="16.7894" size="0.5842" layer="25" rot="R270"/>
 <attribute name="VALUE" x="16.9037" y="16.4592" size="0.4064" layer="27" rot="R270"/>
 </element>
 <element name="C9" library="resistor" package="C0402" value="100n" x="7.0612" y="37.1348" smashed="yes" rot="R180">
@@ -2005,11 +2009,11 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="13.6906" y="29.1846" size="1.27" layer="28" rot="MR270"/>
 </element>
 <element name="C20" library="resistor" package="C0402" value="100n" x="23.0124" y="20.1676" smashed="yes" rot="MR270">
-<attribute name="NAME" x="22.3774" y="20.8026" size="1.27" layer="26" rot="MR270"/>
+<attribute name="NAME" x="22.1742" y="19.8374" size="0.5842" layer="26" rot="MR270"/>
 <attribute name="VALUE" x="24.9174" y="20.8026" size="1.27" layer="28" rot="MR270"/>
 </element>
 <element name="R20" library="resistor" package="R0402" value="1k" x="17.9832" y="18.796" smashed="yes" rot="R90">
-<attribute name="NAME" x="18.415" y="21.1074" size="0.635" layer="25" rot="R180"/>
+<attribute name="NAME" x="18.8214" y="19.5326" size="0.5842" layer="25" rot="R270"/>
 <attribute name="VALUE" x="19.8882" y="18.161" size="1.27" layer="27" rot="R90"/>
 </element>
 <element name="IC3" library="linear" package="SOT23-5" value="MCP601OT" x="14.9352" y="22.098" smashed="yes" rot="MR180">
@@ -2022,7 +2026,7 @@ design rules under a new name.</description>
 </element>
 <element name="CALL" library="SparkFun-Retired" package="TACTILE-SWITCH-SMD" value="TAC_SWITCHSMD" x="13.1572" y="16.1068" smashed="yes">
 <attribute name="PROD_ID" value="SWCH-08247" x="13.1572" y="16.1068" size="1.778" layer="27" display="off"/>
-<attribute name="NAME" x="15.5194" y="12.9064" size="0.5842" layer="25"/>
+<attribute name="NAME" x="15.875" y="13.3128" size="0.762" layer="25"/>
 <attribute name="VALUE" x="12.2682" y="14.0748" size="0.4064" layer="27"/>
 </element>
 <element name="R21" library="resistor" package="R0402" value="10k" x="9.9568" y="14.9352" smashed="yes" rot="MR90">
@@ -2035,27 +2039,34 @@ design rules under a new name.</description>
 </element>
 <element name="U$1" library="SparkFun-Connectors" package="AUDIO-JACK-TRRS-SMD" value="AUDIO-JACK3" x="5.6388" y="15.4432" smashed="yes" rot="R90"/>
 <element name="LDO" library="Orlando" package="SC-70-5" value="MIC5365/6" x="27.5844" y="17.1196" smashed="yes">
-<attribute name="NAME" x="26.6954" y="18.6436" size="0.4064" layer="25"/>
+<attribute name="NAME" x="26.9494" y="18.6436" size="0.5842" layer="25"/>
 <attribute name="VALUE" x="26.8224" y="16.8656" size="0.4064" layer="27"/>
 </element>
-<element name="LIPO" library="OrlandoRonMod" package="HOLE" value="BATT-CONNECT" x="30.5308" y="17.3736" smashed="yes" rot="R270">
-<attribute name="NAME" x="31.8008" y="19.9136" size="0.762" layer="25" rot="R270"/>
-<attribute name="VALUE" x="28.6258" y="19.9136" size="0.762" layer="27" rot="R270"/>
+<element name="LIPO" library="OrlandoRonMod" package="HOLE" value="BATT-CONNECT" x="30.5308" y="17.3736" smashed="yes" rot="R90">
+<attribute name="NAME" x="31.242" y="20.0152" size="0.5842" layer="25" rot="R90"/>
+<attribute name="VALUE" x="32.4358" y="14.8336" size="0.762" layer="27" rot="R90"/>
 </element>
 <element name="C23" library="resistor" package="C0402" value="100n" x="29.1084" y="14.6812" smashed="yes" rot="R270">
-<attribute name="NAME" x="29.7434" y="15.3162" size="1.27" layer="25" rot="R270"/>
+<attribute name="NAME" x="29.845" y="13.4366" size="0.5842" layer="25" rot="R180"/>
 <attribute name="VALUE" x="27.2034" y="15.3162" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="C24" library="resistor" package="C0402" value="100n" x="25.7048" y="17.0688" smashed="yes" rot="R270">
-<attribute name="NAME" x="26.3398" y="17.7038" size="1.27" layer="25" rot="R270"/>
+<attribute name="NAME" x="24.9174" y="18.669" size="0.5842" layer="25"/>
 <attribute name="VALUE" x="23.7998" y="17.7038" size="1.27" layer="27" rot="R270"/>
 </element>
 <element name="U$2" library="Orlando" package="PIEZO-1" value="PS1240P02CT3P" x="26.3652" y="25.5016" smashed="yes"/>
-<element name="MIC" library="Orlando" package="MIC_01" value="MIC_CMC-5042PF-AC" x="22.7584" y="16.4084"/>
-<element name="C4" library="resistor" package="C0402" value="100n" x="16.6116" y="37.1856" rot="R180"/>
+<element name="MIC" library="Orlando" package="MIC_01" value="MIC_CMC-5042PF-AC" x="22.7584" y="16.4084" smashed="yes">
+<attribute name="NAME" x="23.0124" y="16.3576" size="0.5842" layer="25"/>
+<attribute name="VALUE" x="20.2184" y="11.9634" size="1.016" layer="27"/>
+</element>
+<element name="C4" library="resistor" package="C0402" value="100n" x="16.6116" y="37.1856" smashed="yes" rot="R180">
+<attribute name="NAME" x="17.2466" y="36.5506" size="1.27" layer="25" rot="R180"/>
+<attribute name="VALUE" x="17.2466" y="39.0906" size="1.27" layer="27" rot="R180"/>
+</element>
 <element name="S1" library="SparkFun-Retired" package="TACTILE-SWITCH-SMD" value="TAC_SWITCHSMD" x="2.794" y="-2.6416">
 <attribute name="PROD_ID" value="SWCH-08247" x="2.794" y="-2.6416" size="1.778" layer="27" display="off"/>
 </element>
+<element name="U$4" library="Orlando" package="PIEZO-1" value="PS1240P02CT3P" x="42.8244" y="25.908"/>
 </elements>
 <signals>
 <signal name="D13-SCK">
@@ -2133,7 +2144,6 @@ design rules under a new name.</description>
 <contactref element="IC3" pad="5"/>
 <contactref element="C22" pad="2"/>
 <contactref element="LDO" pad="2"/>
-<contactref element="LIPO" pad="P$1"/>
 <contactref element="C23" pad="2"/>
 <contactref element="C24" pad="2"/>
 <contactref element="PROGRAM/BOOTLOAD" pad="9"/>
@@ -2192,7 +2202,7 @@ design rules under a new name.</description>
 <wire x1="14.2606" y1="19.1882" x2="14.1732" y2="19.1008" width="0.2032" layer="1"/>
 <wire x1="15.9512" y1="13.5018" x2="16.9188" y2="13.5018" width="0.2032" layer="1"/>
 <wire x1="16.9188" y1="13.5018" x2="17.9832" y2="14.5662" width="0.2032" layer="1"/>
-<wire x1="11.7856" y1="27.8996" x2="14.4972" y2="27.756" width="0" layer="19" extent="1-16"/>
+<contactref element="LIPO" pad="P$2"/>
 </signal>
 <signal name="3.3V">
 <contactref element="R3" pad="2"/>
@@ -2232,11 +2242,11 @@ design rules under a new name.</description>
 <via x="8.7376" y="14.2748" extent="1-16" drill="0.381" shape="octagon"/>
 <wire x1="9.9568" y1="14.2852" x2="9.2352" y2="14.2852" width="0.2032" layer="16"/>
 <wire x1="9.2352" y1="14.2852" x2="8.7376" y2="14.2748" width="0.2032" layer="16"/>
-<via x="11.2776" y="26.0604" extent="1-16" drill="0.381" shape="octagon"/>
+<via x="11.2776" y="26.4668" extent="1-16" drill="0.381" shape="octagon"/>
 <wire x1="9.9416" y1="29.1892" x2="10.7396" y2="29.1892" width="0.2032" layer="16"/>
 <wire x1="10.7396" y1="29.1892" x2="10.922" y2="29.0068" width="0.2032" layer="16"/>
-<wire x1="10.922" y1="29.0068" x2="10.922" y2="26.416" width="0.2032" layer="16"/>
-<wire x1="10.922" y1="26.416" x2="11.2776" y2="26.0604" width="0.2032" layer="16"/>
+<wire x1="10.922" y1="29.0068" x2="10.922" y2="26.7208" width="0.2032" layer="16"/>
+<wire x1="10.922" y1="26.7208" x2="11.2776" y2="26.4668" width="0.2032" layer="16"/>
 <wire x1="11.7856" y1="29.1996" x2="11.1148" y2="29.1996" width="0.2032" layer="16"/>
 <wire x1="11.1148" y1="29.1996" x2="10.922" y2="29.0068" width="0.2032" layer="16"/>
 <via x="13.8684" y="24.638" extent="1-16" drill="0.381" shape="octagon"/>
@@ -2723,18 +2733,20 @@ design rules under a new name.</description>
 <contactref element="U$1" pad="EARTH"/>
 </signal>
 <signal name="V_BATT">
-<contactref element="LIPO" pad="P$2"/>
 <contactref element="LDO" pad="1"/>
 <contactref element="C23" pad="1"/>
 <contactref element="LDO" pad="3"/>
-<wire x1="30.5308" y1="16.2386" x2="28.2904" y2="16.2386" width="0.4064" layer="1"/>
 <wire x1="28.2904" y1="16.2386" x2="28.2344" y2="16.2946" width="0.2032" layer="1"/>
 <wire x1="26.9344" y1="16.2946" x2="26.9344" y2="15.6868" width="0.4064" layer="1"/>
 <wire x1="26.9344" y1="15.6868" x2="27.2288" y2="15.3924" width="0.4064" layer="1"/>
-<wire x1="27.2288" y1="15.3924" x2="29.0472" y2="15.3924" width="0.4064" layer="1"/>
+<wire x1="27.2288" y1="15.3924" x2="28.2956" y2="15.3924" width="0.4064" layer="1"/>
+<wire x1="28.2956" y1="15.3924" x2="29.0472" y2="15.3924" width="0.4064" layer="1"/>
 <wire x1="29.0472" y1="15.3924" x2="29.1084" y2="15.3312" width="0.4064" layer="1"/>
-<wire x1="29.0472" y1="15.3924" x2="29.6846" y2="15.3924" width="0.4064" layer="1"/>
-<wire x1="29.6846" y1="15.3924" x2="30.5308" y2="16.2386" width="0.4064" layer="1"/>
+<contactref element="LIPO" pad="P$1"/>
+<wire x1="29.0472" y1="15.3924" x2="29.7006" y2="15.3924" width="0.4064" layer="1"/>
+<wire x1="29.7006" y1="15.3924" x2="30.5308" y2="16.2226" width="0.4064" layer="1"/>
+<wire x1="28.2344" y1="16.2946" x2="28.2344" y2="15.4536" width="0.4064" layer="1"/>
+<wire x1="28.2344" y1="15.4536" x2="28.2956" y2="15.3924" width="0.4064" layer="1"/>
 </signal>
 <signal name="N$6">
 <contactref element="D2" pad="A"/>
