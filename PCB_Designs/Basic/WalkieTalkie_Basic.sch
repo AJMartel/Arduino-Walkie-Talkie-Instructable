@@ -8193,7 +8193,7 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/21314g.pdf</description>
 </classes>
 <parts>
 <part name="ARDUINO" library="SparkFun-DigitalIC" deviceset="ATMEGA328_SMT-OHMOD" device="" value="ATMEGA328P"/>
-<part name="Q1" library="SparkFun-DiscreteSemi" deviceset="MOSFET-NCHANNEL" device="BSS123LT1G"/>
+<part name="MIC-AMP" library="SparkFun-DiscreteSemi" deviceset="MOSFET-NCHANNEL" device="BSS123LT1G"/>
 <part name="R1" library="resistor" deviceset="R-US_" device="R0402" value="900k"/>
 <part name="R2" library="resistor" deviceset="R-US_" device="R0402" value="10k"/>
 <part name="R3" library="resistor" deviceset="R-US_" device="R0402" value="10k"/>
@@ -8207,7 +8207,7 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/21314g.pdf</description>
 <part name="SUPPLY2" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
 <part name="SUPPLY3" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
 <part name="XTAL" library="OrlandoRonMod" deviceset="CRYSTAL-CA-310" device=""/>
-<part name="PROGRAM/BOOTLOAD" library="SparkFun-Connectors" deviceset="M10" device="NO_SILK_PTH_FEMALE"/>
+<part name="PROGRAM/BOOTLOADING" library="SparkFun-Connectors" deviceset="M10" device="NO_SILK_PTH_FEMALE"/>
 <part name="R7" library="resistor" deviceset="R-US_" device="R0402" value="1.5k"/>
 <part name="R8" library="resistor" deviceset="R-US_" device="R0402" value="1.5k"/>
 <part name="R9" library="resistor" deviceset="R-US_" device="R0402" value="1.5k"/>
@@ -8241,19 +8241,19 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/21314g.pdf</description>
 <part name="SUPPLY5" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
 <part name="C17" library="resistor" deviceset="C-EU" device="C0402" value="100n"/>
 <part name="SUPPLY6" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
-<part name="IC1" library="analog-devices" deviceset="AD8609" device="RU"/>
+<part name="AUDIO" library="analog-devices" deviceset="AD8609" device="RU"/>
 <part name="C3" library="resistor" deviceset="C-EU" device="C0402" value="10n"/>
 <part name="R5" library="resistor" deviceset="R-US_" device="R0402" value="1.5M"/>
 <part name="R17" library="resistor" deviceset="R-US_" device="R0402" value="1.5k"/>
 <part name="R18" library="resistor" deviceset="R-US_" device="R0402" value="1.5k"/>
 <part name="C18" library="resistor" deviceset="C-EU" device="C0402" value="10n"/>
 <part name="R19" library="resistor" deviceset="R-US_" device="R0402" value="1.5k"/>
-<part name="IC2" library="analog-devices" deviceset="AD8603" device="UJ"/>
+<part name="VREF" library="analog-devices" deviceset="AD8603" device="UJ"/>
 <part name="R6" library="resistor" deviceset="R-US_" device="R0402" value="1.5k"/>
 <part name="R11" library="resistor" deviceset="R-US_" device="R0402" value="1.5k"/>
 <part name="GND3" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
 <part name="GND4" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="U$3" library="Orlando" deviceset="NRF24L01-BREAKOUT" device=""/>
+<part name="NRF24" library="Orlando" deviceset="NRF24L01-BREAKOUT" device=""/>
 <part name="D2" library="SparkFun-LED" deviceset="LED-RED" device="0603" value="RED"/>
 <part name="SUPPLY4" library="SparkFun-Aesthetics" deviceset="3.3V" device=""/>
 <part name="GND9" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
@@ -8296,8 +8296,6 @@ Source: http://ww1.microchip.com/downloads/en/DeviceDoc/21314g.pdf</description>
 <part name="MIC" library="Orlando" deviceset="MIC_CMC-5042PF-AC" device=""/>
 <part name="C4" library="resistor" deviceset="C-EU" device="C0402" value="100n"/>
 <part name="GND16" library="SparkFun-Aesthetics" deviceset="GND" device=""/>
-<part name="S1" library="SparkFun-Retired" deviceset="TAC_SWITCH" device="SMD" value="TAC_SWITCHSMD"/>
-<part name="U$4" library="Orlando" deviceset="PS1240P02CT3" device="P"/>
 </parts>
 <sheets>
 <sheet>
@@ -8317,7 +8315,7 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 </plain>
 <instances>
 <instance part="ARDUINO" gate="G$1" x="27.94" y="38.1"/>
-<instance part="Q1" gate="G$1" x="45.72" y="91.44"/>
+<instance part="MIC-AMP" gate="G$1" x="45.72" y="91.44"/>
 <instance part="R1" gate="G$1" x="35.56" y="99.06" rot="R90"/>
 <instance part="R2" gate="G$1" x="45.72" y="114.3" rot="R90"/>
 <instance part="R3" gate="G$1" x="17.78" y="99.06" rot="R90"/>
@@ -8331,9 +8329,9 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <instance part="SUPPLY2" gate="G$1" x="17.78" y="106.68"/>
 <instance part="SUPPLY3" gate="G$1" x="45.72" y="124.46"/>
 <instance part="XTAL" gate="G$1" x="-7.62" y="40.64" rot="R90"/>
-<instance part="PROGRAM/BOOTLOAD" gate="G$1" x="-40.64" y="5.08" smashed="yes">
+<instance part="PROGRAM/BOOTLOADING" gate="G$1" x="-40.64" y="5.08" smashed="yes">
 <attribute name="VALUE" x="-40.64" y="-17.78" size="1.778" layer="96"/>
-<attribute name="NAME" x="-40.64" y="13.97" size="1.778" layer="95"/>
+<attribute name="NAME" x="-41.91" y="-15.24" size="1.778" layer="95" rot="R90"/>
 </instance>
 <instance part="R7" gate="G$1" x="129.54" y="-33.02" rot="R180"/>
 <instance part="R8" gate="G$1" x="144.78" y="-33.02" rot="R180"/>
@@ -8368,23 +8366,23 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <instance part="SUPPLY5" gate="G$1" x="0" y="83.82"/>
 <instance part="C17" gate="G$1" x="-10.16" y="68.58" rot="R270"/>
 <instance part="SUPPLY6" gate="G$1" x="-2.54" y="60.96"/>
-<instance part="IC1" gate="A" x="203.2" y="-35.56"/>
-<instance part="IC1" gate="B" x="198.12" y="-66.04"/>
-<instance part="IC1" gate="C" x="243.84" y="-68.58" rot="MR180"/>
-<instance part="IC1" gate="D" x="248.92" y="-38.1" rot="MR180"/>
-<instance part="IC1" gate="P" x="337.82" y="-22.86"/>
+<instance part="AUDIO" gate="A" x="203.2" y="-35.56"/>
+<instance part="AUDIO" gate="B" x="198.12" y="-66.04"/>
+<instance part="AUDIO" gate="C" x="243.84" y="-68.58" rot="MR180"/>
+<instance part="AUDIO" gate="D" x="248.92" y="-38.1" rot="MR180"/>
+<instance part="AUDIO" gate="P" x="337.82" y="-22.86"/>
 <instance part="C3" gate="G$1" x="220.98" y="-35.56" rot="R90"/>
 <instance part="R5" gate="G$1" x="246.38" y="-58.42" rot="R180"/>
 <instance part="R17" gate="G$1" x="233.68" y="-35.56" rot="R180"/>
 <instance part="R18" gate="G$1" x="251.46" y="-27.94" rot="R180"/>
 <instance part="C18" gate="G$1" x="215.9" y="-66.04" rot="R90"/>
 <instance part="R19" gate="G$1" x="228.6" y="-66.04" rot="R180"/>
-<instance part="IC2" gate="G$1" x="345.44" y="-63.5"/>
+<instance part="VREF" gate="G$1" x="345.44" y="-63.5"/>
 <instance part="R6" gate="G$1" x="330.2" y="-53.34" rot="R270"/>
 <instance part="R11" gate="G$1" x="330.2" y="-68.58" rot="R270"/>
 <instance part="GND3" gate="1" x="330.2" y="-78.74"/>
 <instance part="GND4" gate="1" x="347.98" y="-73.66"/>
-<instance part="U$3" gate="G$1" x="25.4" y="-10.16"/>
+<instance part="NRF24" gate="G$1" x="25.4" y="-10.16"/>
 <instance part="D2" gate="G$1" x="96.52" y="12.7"/>
 <instance part="SUPPLY4" gate="G$1" x="40.64" y="-2.54"/>
 <instance part="GND9" gate="1" x="40.64" y="-22.86"/>
@@ -8428,8 +8426,6 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <instance part="MIC" gate="G$1" x="12.7" y="88.9"/>
 <instance part="C4" gate="G$1" x="-10.16" y="58.42" rot="R270"/>
 <instance part="GND16" gate="1" x="-20.32" y="53.34"/>
-<instance part="S1" gate="S" x="116.84" y="106.68"/>
-<instance part="U$4" gate="G$1" x="170.18" y="27.94"/>
 </instances>
 <busses>
 </busses>
@@ -8441,12 +8437,12 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <label x="55.88" y="10.16" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="PROGRAM/BOOTLOAD" gate="G$1" pin="1"/>
+<pinref part="PROGRAM/BOOTLOADING" gate="G$1" pin="1"/>
 <wire x1="-30.48" y1="-12.7" x2="-27.94" y2="-12.7" width="0.1524" layer="91"/>
 <label x="-27.94" y="-12.7" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$3" gate="G$1" pin="SCK"/>
+<pinref part="NRF24" gate="G$1" pin="SCK"/>
 <wire x1="12.7" y1="-10.16" x2="10.16" y2="-10.16" width="0.1524" layer="91"/>
 <label x="10.16" y="-10.16" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -8466,7 +8462,7 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <net name="N$5" class="0">
 <segment>
 <pinref part="C1" gate="G$1" pin="2"/>
-<pinref part="Q1" gate="G$1" pin="G"/>
+<pinref part="MIC-AMP" gate="G$1" pin="G"/>
 <wire x1="30.48" y1="91.44" x2="35.56" y2="91.44" width="0.1524" layer="91"/>
 <pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="35.56" y1="91.44" x2="38.1" y2="91.44" width="0.1524" layer="91"/>
@@ -8489,7 +8485,7 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 </net>
 <net name="GND" class="0">
 <segment>
-<pinref part="Q1" gate="G$1" pin="S"/>
+<pinref part="MIC-AMP" gate="G$1" pin="S"/>
 <pinref part="GND2" gate="1" pin="GND"/>
 <wire x1="45.72" y1="81.28" x2="45.72" y2="83.82" width="0.1524" layer="91"/>
 <pinref part="MIC" gate="G$1" pin="-"/>
@@ -8567,18 +8563,18 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <wire x1="330.2" y1="-76.2" x2="330.2" y2="-73.66" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="IC2" gate="G$1" pin="-VS"/>
+<pinref part="VREF" gate="G$1" pin="-VS"/>
 <pinref part="GND4" gate="1" pin="GND"/>
 <wire x1="347.98" y1="-71.12" x2="347.98" y2="-68.58" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U$3" gate="G$1" pin="GND"/>
+<pinref part="NRF24" gate="G$1" pin="GND"/>
 <wire x1="38.1" y1="-17.78" x2="40.64" y2="-17.78" width="0.1524" layer="91"/>
 <pinref part="GND9" gate="1" pin="GND"/>
 <wire x1="40.64" y1="-17.78" x2="40.64" y2="-20.32" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="IC1" gate="P" pin="V-"/>
+<pinref part="AUDIO" gate="P" pin="V-"/>
 <pinref part="GND18" gate="1" pin="GND"/>
 <wire x1="337.82" y1="-35.56" x2="337.82" y2="-33.02" width="0.1524" layer="91"/>
 <pinref part="C9" gate="G$1" pin="2"/>
@@ -8634,12 +8630,12 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <wire x1="238.76" y1="60.96" x2="238.76" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="PROGRAM/BOOTLOAD" gate="G$1" pin="9"/>
+<pinref part="PROGRAM/BOOTLOADING" gate="G$1" pin="9"/>
 <pinref part="GND29" gate="1" pin="GND"/>
 <wire x1="-30.48" y1="7.62" x2="-27.94" y2="7.62" width="0.1524" layer="91"/>
 <wire x1="-27.94" y1="7.62" x2="-15.24" y2="7.62" width="0.1524" layer="91"/>
 <wire x1="-15.24" y1="7.62" x2="-15.24" y2="2.54" width="0.1524" layer="91"/>
-<pinref part="PROGRAM/BOOTLOAD" gate="G$1" pin="10"/>
+<pinref part="PROGRAM/BOOTLOADING" gate="G$1" pin="10"/>
 <wire x1="-30.48" y1="10.16" x2="-27.94" y2="10.16" width="0.1524" layer="91"/>
 <wire x1="-27.94" y1="10.16" x2="-27.94" y2="7.62" width="0.1524" layer="91"/>
 <junction x="-27.94" y="7.62"/>
@@ -8720,13 +8716,13 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <junction x="-2.54" y="58.42"/>
 </segment>
 <segment>
-<pinref part="U$3" gate="G$1" pin="VDD"/>
+<pinref part="NRF24" gate="G$1" pin="VDD"/>
 <wire x1="38.1" y1="-5.08" x2="40.64" y2="-5.08" width="0.1524" layer="91"/>
 <pinref part="SUPPLY4" gate="G$1" pin="3.3V"/>
 <wire x1="40.64" y1="-2.54" x2="40.64" y2="-5.08" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="IC1" gate="P" pin="V+"/>
+<pinref part="AUDIO" gate="P" pin="V+"/>
 <pinref part="SUPPLY7" gate="G$1" pin="3.3V"/>
 <wire x1="337.82" y1="-10.16" x2="337.82" y2="-12.7" width="0.1524" layer="91"/>
 <pinref part="C9" gate="G$1" pin="1"/>
@@ -8741,7 +8737,7 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <wire x1="330.2" y1="-45.72" x2="330.2" y2="-48.26" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="IC2" gate="G$1" pin="+VS"/>
+<pinref part="VREF" gate="G$1" pin="+VS"/>
 <pinref part="SUPPLY9" gate="G$1" pin="3.3V"/>
 <wire x1="347.98" y1="-50.8" x2="347.98" y2="-53.34" width="0.1524" layer="91"/>
 <pinref part="C19" gate="G$1" pin="1"/>
@@ -8779,7 +8775,7 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <junction x="238.76" y="76.2"/>
 </segment>
 <segment>
-<pinref part="PROGRAM/BOOTLOAD" gate="G$1" pin="8"/>
+<pinref part="PROGRAM/BOOTLOADING" gate="G$1" pin="8"/>
 <pinref part="SUPPLY12" gate="G$1" pin="3.3V"/>
 <wire x1="-30.48" y1="5.08" x2="-10.16" y2="5.08" width="0.1524" layer="91"/>
 <wire x1="-10.16" y1="5.08" x2="-10.16" y2="7.62" width="0.1524" layer="91"/>
@@ -8813,7 +8809,7 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <pinref part="C8" gate="G$1" pin="1"/>
 <wire x1="180.34" y1="-33.02" x2="182.88" y2="-33.02" width="0.1524" layer="91"/>
 <wire x1="182.88" y1="-33.02" x2="182.88" y2="-35.56" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="A" pin="IN+"/>
+<pinref part="AUDIO" gate="A" pin="IN+"/>
 <wire x1="198.12" y1="-33.02" x2="182.88" y2="-33.02" width="0.1524" layer="91"/>
 <junction x="182.88" y="-33.02"/>
 </segment>
@@ -8857,7 +8853,7 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <pinref part="C13" gate="G$1" pin="1"/>
 <wire x1="180.34" y1="-63.5" x2="182.88" y2="-63.5" width="0.1524" layer="91"/>
 <wire x1="182.88" y1="-63.5" x2="182.88" y2="-66.04" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="B" pin="IN+"/>
+<pinref part="AUDIO" gate="B" pin="IN+"/>
 <wire x1="193.04" y1="-63.5" x2="182.88" y2="-63.5" width="0.1524" layer="91"/>
 <junction x="182.88" y="-63.5"/>
 </segment>
@@ -8908,7 +8904,7 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <pinref part="C17" gate="G$1" pin="1"/>
 </segment>
 <segment>
-<pinref part="PROGRAM/BOOTLOAD" gate="G$1" pin="4"/>
+<pinref part="PROGRAM/BOOTLOADING" gate="G$1" pin="4"/>
 <wire x1="-30.48" y1="-5.08" x2="-27.94" y2="-5.08" width="0.1524" layer="91"/>
 <label x="-27.94" y="-5.08" size="1.27" layer="95" xref="yes"/>
 </segment>
@@ -8920,18 +8916,18 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <label x="-22.86" y="68.58" size="1.778" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="PROGRAM/BOOTLOAD" gate="G$1" pin="5"/>
+<pinref part="PROGRAM/BOOTLOADING" gate="G$1" pin="5"/>
 <wire x1="-30.48" y1="-2.54" x2="-27.94" y2="-2.54" width="0.1524" layer="91"/>
 <label x="-27.94" y="-2.54" size="1.27" layer="95" xref="yes"/>
 </segment>
 </net>
 <net name="N$7" class="0">
 <segment>
-<pinref part="IC1" gate="A" pin="IN-"/>
+<pinref part="AUDIO" gate="A" pin="IN-"/>
 <wire x1="198.12" y1="-38.1" x2="195.58" y2="-38.1" width="0.1524" layer="91"/>
 <wire x1="195.58" y1="-38.1" x2="195.58" y2="-43.18" width="0.1524" layer="91"/>
 <wire x1="195.58" y1="-43.18" x2="215.9" y2="-43.18" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="A" pin="OUT"/>
+<pinref part="AUDIO" gate="A" pin="OUT"/>
 <wire x1="213.36" y1="-35.56" x2="215.9" y2="-35.56" width="0.1524" layer="91"/>
 <wire x1="215.9" y1="-35.56" x2="215.9" y2="-43.18" width="0.1524" layer="91"/>
 <pinref part="C3" gate="G$1" pin="1"/>
@@ -8953,7 +8949,7 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <pinref part="R18" gate="G$1" pin="2"/>
 <wire x1="246.38" y1="-27.94" x2="241.3" y2="-27.94" width="0.1524" layer="91"/>
 <wire x1="241.3" y1="-27.94" x2="241.3" y2="-35.56" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="D" pin="IN-"/>
+<pinref part="AUDIO" gate="D" pin="IN-"/>
 <wire x1="243.84" y1="-35.56" x2="241.3" y2="-35.56" width="0.1524" layer="91"/>
 <junction x="241.3" y="-35.56"/>
 </segment>
@@ -8962,22 +8958,22 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <segment>
 <wire x1="241.3" y1="-40.64" x2="241.3" y2="-43.18" width="0.1524" layer="91"/>
 <label x="241.3" y="-43.18" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="IC1" gate="D" pin="IN+"/>
+<pinref part="AUDIO" gate="D" pin="IN+"/>
 <wire x1="243.84" y1="-40.64" x2="241.3" y2="-40.64" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <wire x1="236.22" y1="-71.12" x2="236.22" y2="-73.66" width="0.1524" layer="91"/>
 <label x="236.22" y="-73.66" size="1.27" layer="95" rot="R180" xref="yes"/>
-<pinref part="IC1" gate="C" pin="IN+"/>
+<pinref part="AUDIO" gate="C" pin="IN+"/>
 <wire x1="238.76" y1="-71.12" x2="236.22" y2="-71.12" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="IC2" gate="G$1" pin="IN-"/>
+<pinref part="VREF" gate="G$1" pin="IN-"/>
 <wire x1="340.36" y1="-66.04" x2="337.82" y2="-66.04" width="0.1524" layer="91"/>
 <wire x1="337.82" y1="-66.04" x2="337.82" y2="-81.28" width="0.1524" layer="91"/>
 <wire x1="337.82" y1="-81.28" x2="360.68" y2="-81.28" width="0.1524" layer="91"/>
 <wire x1="360.68" y1="-81.28" x2="360.68" y2="-63.5" width="0.1524" layer="91"/>
-<pinref part="IC2" gate="G$1" pin="OUT"/>
+<pinref part="VREF" gate="G$1" pin="OUT"/>
 <wire x1="360.68" y1="-63.5" x2="353.06" y2="-63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -8988,9 +8984,9 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <wire x1="210.82" y1="-76.2" x2="210.82" y2="-66.04" width="0.1524" layer="91"/>
 <pinref part="C18" gate="G$1" pin="1"/>
 <wire x1="213.36" y1="-66.04" x2="210.82" y2="-66.04" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="B" pin="IN-"/>
+<pinref part="AUDIO" gate="B" pin="IN-"/>
 <wire x1="193.04" y1="-68.58" x2="190.5" y2="-68.58" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="B" pin="OUT"/>
+<pinref part="AUDIO" gate="B" pin="OUT"/>
 <wire x1="208.28" y1="-66.04" x2="210.82" y2="-66.04" width="0.1524" layer="91"/>
 <junction x="210.82" y="-66.04"/>
 </segment>
@@ -9002,7 +8998,7 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <pinref part="R5" gate="G$1" pin="2"/>
 <wire x1="241.3" y1="-58.42" x2="236.22" y2="-58.42" width="0.1524" layer="91"/>
 <wire x1="236.22" y1="-58.42" x2="236.22" y2="-66.04" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="C" pin="IN-"/>
+<pinref part="AUDIO" gate="C" pin="IN-"/>
 <wire x1="238.76" y1="-66.04" x2="236.22" y2="-66.04" width="0.1524" layer="91"/>
 <junction x="236.22" y="-66.04"/>
 </segment>
@@ -9019,7 +9015,7 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <pinref part="R11" gate="G$1" pin="1"/>
 <pinref part="R6" gate="G$1" pin="2"/>
 <wire x1="330.2" y1="-63.5" x2="330.2" y2="-60.96" width="0.1524" layer="91"/>
-<pinref part="IC2" gate="G$1" pin="IN+"/>
+<pinref part="VREF" gate="G$1" pin="IN+"/>
 <wire x1="330.2" y1="-60.96" x2="330.2" y2="-58.42" width="0.1524" layer="91"/>
 <wire x1="340.36" y1="-60.96" x2="330.2" y2="-60.96" width="0.1524" layer="91"/>
 <junction x="330.2" y="-60.96"/>
@@ -9027,7 +9023,7 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 </net>
 <net name="D7-CE" class="0">
 <segment>
-<pinref part="U$3" gate="G$1" pin="CE"/>
+<pinref part="NRF24" gate="G$1" pin="CE"/>
 <wire x1="12.7" y1="-5.08" x2="10.16" y2="-5.08" width="0.1524" layer="91"/>
 <label x="10.16" y="-5.08" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -9039,7 +9035,7 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 </net>
 <net name="D8-CSN" class="0">
 <segment>
-<pinref part="U$3" gate="G$1" pin="CSN"/>
+<pinref part="NRF24" gate="G$1" pin="CSN"/>
 <wire x1="12.7" y1="-7.62" x2="10.16" y2="-7.62" width="0.1524" layer="91"/>
 <label x="10.16" y="-7.62" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -9051,7 +9047,7 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 </net>
 <net name="D2-IRQ" class="0">
 <segment>
-<pinref part="U$3" gate="G$1" pin="IRQ"/>
+<pinref part="NRF24" gate="G$1" pin="IRQ"/>
 <wire x1="12.7" y1="-17.78" x2="10.16" y2="-17.78" width="0.1524" layer="91"/>
 <label x="10.16" y="-17.78" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -9125,7 +9121,7 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <label x="55.88" y="43.18" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="PROGRAM/BOOTLOAD" gate="G$1" pin="6"/>
+<pinref part="PROGRAM/BOOTLOADING" gate="G$1" pin="6"/>
 <wire x1="-30.48" y1="0" x2="-27.94" y2="0" width="0.1524" layer="91"/>
 <label x="-27.94" y="0" size="1.27" layer="95" xref="yes"/>
 </segment>
@@ -9137,7 +9133,7 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <label x="55.88" y="45.72" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="PROGRAM/BOOTLOAD" gate="G$1" pin="7"/>
+<pinref part="PROGRAM/BOOTLOADING" gate="G$1" pin="7"/>
 <wire x1="-30.48" y1="2.54" x2="-27.94" y2="2.54" width="0.1524" layer="91"/>
 <label x="-27.94" y="2.54" size="1.27" layer="95" xref="yes"/>
 </segment>
@@ -9146,7 +9142,7 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <segment>
 <pinref part="R1" gate="G$1" pin="2"/>
 <wire x1="35.56" y1="104.14" x2="35.56" y2="106.68" width="0.1524" layer="91"/>
-<pinref part="Q1" gate="G$1" pin="D"/>
+<pinref part="MIC-AMP" gate="G$1" pin="D"/>
 <wire x1="35.56" y1="106.68" x2="45.72" y2="106.68" width="0.1524" layer="91"/>
 <wire x1="45.72" y1="106.68" x2="45.72" y2="96.52" width="0.1524" layer="91"/>
 <pinref part="R2" gate="G$1" pin="1"/>
@@ -9166,12 +9162,12 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <label x="55.88" y="15.24" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="PROGRAM/BOOTLOAD" gate="G$1" pin="3"/>
+<pinref part="PROGRAM/BOOTLOADING" gate="G$1" pin="3"/>
 <wire x1="-30.48" y1="-7.62" x2="-27.94" y2="-7.62" width="0.1524" layer="91"/>
 <label x="-27.94" y="-7.62" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$3" gate="G$1" pin="MOSI"/>
+<pinref part="NRF24" gate="G$1" pin="MOSI"/>
 <wire x1="12.7" y1="-12.7" x2="10.16" y2="-12.7" width="0.1524" layer="91"/>
 <label x="10.16" y="-12.7" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -9183,12 +9179,12 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <label x="55.88" y="12.7" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="PROGRAM/BOOTLOAD" gate="G$1" pin="2"/>
+<pinref part="PROGRAM/BOOTLOADING" gate="G$1" pin="2"/>
 <wire x1="-30.48" y1="-10.16" x2="-27.94" y2="-10.16" width="0.1524" layer="91"/>
 <label x="-27.94" y="-10.16" size="1.27" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="U$3" gate="G$1" pin="MISO"/>
+<pinref part="NRF24" gate="G$1" pin="MISO"/>
 <wire x1="12.7" y1="-15.24" x2="10.16" y2="-15.24" width="0.1524" layer="91"/>
 <label x="10.16" y="-15.24" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -9237,7 +9233,7 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <wire x1="261.62" y1="-27.94" x2="261.62" y2="-38.1" width="0.1524" layer="91"/>
 <wire x1="261.62" y1="-38.1" x2="261.62" y2="-45.72" width="0.1524" layer="91"/>
 <wire x1="276.86" y1="-45.72" x2="261.62" y2="-45.72" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="D" pin="OUT"/>
+<pinref part="AUDIO" gate="D" pin="OUT"/>
 <wire x1="259.08" y1="-38.1" x2="261.62" y2="-38.1" width="0.1524" layer="91"/>
 <junction x="261.62" y="-38.1"/>
 </segment>
@@ -9251,7 +9247,7 @@ some button to switch channels and LEDs to indicate what channel we're on</text>
 <wire x1="276.86" y1="-50.8" x2="256.54" y2="-50.8" width="0.1524" layer="91"/>
 <wire x1="256.54" y1="-50.8" x2="256.54" y2="-58.42" width="0.1524" layer="91"/>
 <junction x="256.54" y="-58.42"/>
-<pinref part="IC1" gate="C" pin="OUT"/>
+<pinref part="AUDIO" gate="C" pin="OUT"/>
 <wire x1="254" y1="-68.58" x2="256.54" y2="-68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
