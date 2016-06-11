@@ -1,14 +1,18 @@
 /*
-  FILENAME:   walkie talkie basic.ino
-  AUTHOR:     Orlando S. Hoilett
-  CONTACT:    orlandohoilett@gmail.com
-  VERSION:    0.0.0
-  WEBSITE:    http://www.instructables.com/member/ohoilett/
+  FILENAME:       WalkieTalkie.ino
+  AUTHOR:         Orlando S. Hoilett
+  CONTACT:        orlandohoilett@gmail.com
+  VERSION:        2.0
+  
+  
+  INSTRUCTABLE:   http://www.instructables.com/member/ohoilett/
+  GITHUB:         https://github.com/hoilett/Arduino-Walkie-Talkie-Instructable.git
+  HACKADAY:       https://hackaday.io/project/8598-wristwatch-walkie-talkie
   
   
   AFFILIATIONS:
   Institute for Innovation, Creative Exploration, and Personal
-      Development, West Lafayette, IN
+      Development (IICEPD), West Lafayette, IN
   Calvary Engineering, USA
       A group electronics enthusiasts 
       "let's have a little fun, and save teh world while we are at it"
@@ -18,11 +22,19 @@
   Version 0.0.0
   2015/11/23:2100>
             Instructables release version.
+  Version 2.0
+  2016/05/30:2322>
+            Includes buzzer for playing Mighty Morphin Power Rangers
+            Communicator notification when called.
 
 
   DESCRIPTION
   Simple example for creating a walkie talkie by sending audio
-  using the nRF24L01 RF transceiver module.
+  using the nRF24L01 RF transceiver module. Also uses a call
+  button which plays the Mighty Morphin Power Rangers Communicator
+  notification when pressed for under a specified amount of time.
+  Otherwise, audio is transmitted when Analog In 0 goes LOW. This
+  is handled by the rfAudio library.
 
   
   DISCLAIMER
@@ -60,27 +72,19 @@ Input/Microphone: Analog pin A0 on all boards
 #include <RF24.h>
 #include <SPI.h>
 #include <RF24Audio.h>
-#include "printf.h"    // General includes for radio and audio lib
+#include "printf.h"
 #include <MusicPlayer.h>
 
 RF24 radio(7,8);    // Set radio up using pins 7 (CE) 8 (CS)
 RF24Audio rfAudio(radio,0); // Set up the audio using the radio, and set to radio number 0
-
 const uint8_t callDetector = 3;
-const uint16_t callThreshold = 20; //20% duty cycle?
-//
-//
-//int melody[] = { E6,E6,D6,E6,G6,E6  };
-int melody[] = { E7,E7,D7,E7,G7,E7 };
-
-//unsigned int duration[] = { E, E, E, E, E, E  };
-unsigned int duration[] = { E, E, S, E, E, E  };
-//unsigned int duration[] = { S, S, S, S, S, S };
-
-int melodyPin = 5;
-int melodyLength = 6;
 
 MusicPlayer myPlayer = MusicPlayer(melodyPin);
+int PwrRngrs[] = { E7,E7,D7,E7,G7,E7 };
+unsigned int duration[] = { E, E, S, E, E, E  };
+int melodyPin = 5;
+const uint8_t melodyLength = 6;
+unsigned long notify = 500;
 
 
 void setup() {      
@@ -93,32 +97,51 @@ void setup() {
 
   pinMode(callDetector, INPUT);
 
-  //sets interrupt to check for call button
-  //attachInterrupt(digitalPinToInterrupt(callDetector), sample, RISING);
-  
   //sets the default state for each module to recevie
+  //the RFAudio library has automatically handles, rfAudio.transmit()
+  //when the Analog In 0 goes LOW so no need to add code to activate
+  //rfAudio.transmit();
   rfAudio.receive();
-}
-
-
-//horrible way to use interrupts :)
-void sample()
-{
-  unsigned long time0 = micros();
-  unsigned long i = 0;
-
-  while((micros() - time0) < 2000) //2 milliseconds
-  {
-    if (digitalRead(callDetector)) i++;
-    delayMicroseconds(20);
-  }
-
-  if (i > callThreshold) myPlayer.playMelody(melody, duration, melodyLength);
-  delay(200);
 }
 
 
 void loop()
 {
-  if(digitalRead(callDetector)) sample();
+  unsigned long strt = 0;
+  unsigned long fin = 0;
+
+  //The code waits while the call detector pin is LOW (no audio is
+  //being transmitted. When a call is detected, the time marked
+  //and the code waits until transmission is complete again. If
+  //the time for transmission is under 500 ms, then the call
+  //button was pressed as opposed to the talk button and the
+  //sender wanted to issue a call notification. The Mighty Morphin
+  //Power Rangers Communicator tone is played to indicate the
+  //notification.
+  while(!digitalRead(callDetector));
+  strt = millis();
+  while(digitalRead(callDetector));
+  fin = millis();
+  if ((fin - strt) < notify) myPlayer.playMelody(PwrRngrs, duration, melodyLength);
+
+//  while(((PIND>>3)&0x01) == 0)
+//  {
+//    Serial.println("hello world");
+//  }
+//  
+//  if(digitalRead(3))
+//  {
+//    strt = millis();
+//    flag = true;
+//  }
+//
+//  while(digitalRead(3));
+//  
+//  if(flag) fin = millis();
+//  
+//  if (((fin - strt) < 500) && flag)
+//  {
+//    myPlayer.playMelody(melody, duration, melodyLength);
+//    flag = false;
+//  }
 }
